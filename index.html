@@ -39,9 +39,10 @@
       --radius-sm: 8px;
     }
 
-    @keyframes fadeUp  { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
     @keyframes pulseDot { 0%,100% { opacity:1; } 50% { opacity:.35; } }
+    @keyframes kenBurns { from { transform:scale(1); } to { transform:scale(1.06); } }
 
     .fade-up { animation: fadeUp .7s ease both; }
     .fade-in { animation: fadeIn .6s ease both; }
@@ -163,18 +164,42 @@
     .mobile-menu .btn-primary { width:100%; justify-content:center; font-size:15px; padding:13px; }
 
     /* ── HERO ── */
-    .hero { background:var(--cream); padding:80px 48px; }
+    .hero {
+      position:relative; overflow:hidden;
+      padding:100px 48px 96px;
+      min-height:600px; display:flex; align-items:center;
+    }
+
+    /* Slideshow layers */
+    .hero-slides { position:absolute; inset:0; }
+    .hero-slide {
+      position:absolute; inset:0;
+      background-size:cover; background-position:center;
+      opacity:0; transition:opacity 1s ease;
+      transform:scale(1.06);
+    }
+    .hero-slide.active {
+      opacity:1;
+      animation:kenBurns 5s ease-out forwards;
+    }
+    .hero-overlay {
+      position:absolute; inset:0; z-index:1;
+      background:linear-gradient(to right, rgba(44,26,10,.72) 0%, rgba(44,26,10,.45) 100%);
+    }
+
     .hero-inner {
+      position:relative; z-index:2;
       max-width:760px; margin:0 auto;
       text-align:center;
     }
 
     .hero-badge {
       display:inline-flex; align-items:center; gap:8px;
-      background:var(--amber-lt); color:#7A4A18;
+      background:rgba(237,216,190,.15); color:#EDD8BE;
       font-size:13px; font-weight:500;
       padding:6px 14px 6px 10px; border-radius:999px;
       margin-bottom:22px;
+      border:1px solid rgba(237,216,190,.2);
     }
     .hero-badge-dot {
       width:7px; height:7px; background:var(--amber);
@@ -185,25 +210,27 @@
       font-family:var(--serif);
       font-size:clamp(42px,5.2vw,64px);
       font-weight:500; line-height:1.09;
-      color:var(--espresso); margin-bottom:20px;
+      color:#F5EDE0; margin-bottom:20px;
     }
     .hero h1 em { font-style:italic; color:var(--amber); }
 
     .hero-sub {
-      font-size:17px; color:var(--rust);
+      font-size:17px; color:rgba(237,216,190,.85);
       line-height:1.65; max-width:520px; margin:0 auto 34px;
     }
 
-    .hero-badge { margin-bottom:22px; }
-
     .hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:32px; justify-content:center; }
     .hero-actions .btn-primary  { font-size:15px; padding:14px 28px; }
-    .hero-actions .btn-secondary { font-size:15px; padding:13px 24px; }
+    .hero-actions .btn-secondary {
+      font-size:15px; padding:13px 24px;
+      color:#EDD8BE; border-color:rgba(237,216,190,.5);
+    }
+    .hero-actions .btn-secondary:hover { background:rgba(237,216,190,.15); }
 
     .hero-trust { display:flex; gap:22px; flex-wrap:wrap; justify-content:center; }
     .hero-trust-item {
       display:flex; align-items:center; gap:7px;
-      font-size:13px; color:var(--rust-lt);
+      font-size:13px; color:rgba(237,216,190,.75);
     }
     .hero-trust-item svg { stroke:var(--amber); flex-shrink:0; }
 
@@ -629,7 +656,15 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" aria-label="Hero">
+<section class="hero" id="hero-section" aria-label="Hero">
+  <div class="hero-slides" id="hero-slides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=1600&q=80')"></div>
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div>
       <div class="hero-badge fade-in">
@@ -1069,6 +1104,39 @@
       }
     });
   });
+
+  // Hero slideshow
+  (function() {
+    const heroEl = document.getElementById('hero-section');
+    const slides = Array.from(document.querySelectorAll('.hero-slide'));
+    let current = 0;
+    let timer;
+
+    // Preload all images
+    slides.forEach(s => {
+      const url = s.style.backgroundImage.replace(/^url\(['"]?/, '').replace(/['"]?\)$/, '');
+      const img = new Image();
+      img.src = url;
+    });
+
+    function goTo(idx) {
+      slides[current].classList.remove('active');
+      current = idx;
+      // Force reflow so Ken Burns restarts cleanly
+      void slides[current].offsetWidth;
+      slides[current].classList.add('active');
+    }
+
+    function advance() { goTo((current + 1) % slides.length); }
+
+    function start() { timer = setInterval(advance, 5000); }
+    function stop()  { clearInterval(timer); }
+
+    heroEl.addEventListener('mouseenter', stop);
+    heroEl.addEventListener('mouseleave', start);
+
+    start();
+  })();
 
   // Booking form
   document.getElementById('booking-form').addEventListener('submit', e => {
