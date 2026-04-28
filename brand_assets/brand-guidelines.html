@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brand Asset Guidelines — Alex Appliance Repair Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --amber:    #C17A3A;
+      --amber-dk: #9A5E24;
+      --amber-lt: #EDD8BE;
+      --cream:    #F5EDE0;
+      --cream-dk: #EAD9C3;
+      --walnut:   #3D1F08;
+      --espresso: #2C1A0A;
+      --rust:     #6B4226;
+      --rust-lt:  #9A6B3E;
+      --white:    #FFFDF9;
+      --border:   rgba(161,107,56,0.18);
+      --serif:    'Playfair Display', Georgia, serif;
+      --sans:     'DM Sans', sans-serif;
+      --mono:     'DM Mono', monospace;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: #FAF4EC;
+      color: var(--espresso);
+      line-height: 1.7;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      background: var(--walnut);
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 56px 64px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(193,122,58,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cover-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #C8986A;
+      margin-bottom: 12px;
+    }
+    .cover-title {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 500;
+      color: #EDD8BE;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .cover-sub {
+      font-size: 15px;
+      color: rgba(237,216,190,0.55);
+      max-width: 480px;
+    }
+    .cover-version {
+      position: absolute;
+      top: 40px;
+      right: 64px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: rgba(200,152,106,0.5);
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 64px 40px;
+    }
+    @media (max-width: 700px) { .page { padding: 48px 20px; } .cover { padding: 40px 20px 40px; } .cover-version { right: 20px; top: 24px; } }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 72px; }
+    .section:last-child { margin-bottom: 0; }
+    .section-number {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--amber);
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--espresso);
+      margin-bottom: 8px;
+    }
+    .section-desc {
+      font-size: 15px;
+      color: var(--rust);
+      max-width: 600px;
+      margin-bottom: 36px;
+      line-height: 1.65;
+    }
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 64px 0;
+    }
+
+    /* ── LOGO BLOCK ── */
+    .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width:600px) { .logo-grid { grid-template-columns: 1fr; } }
+
+    .logo-card {
+      border-radius: 12px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .logo-card.light { background: var(--white); border: 1px solid var(--border); }
+    .logo-card.dark  { background: var(--walnut); }
+    .logo-card.cream { background: var(--cream); border: 1px solid var(--cream-dk); }
+    .logo-card.amber { background: var(--amber); }
+    .logo-card-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .logo-card.light .logo-card-label,
+    .logo-card.cream .logo-card-label { color: var(--rust-lt); }
+    .logo-card.dark .logo-card-label,
+    .logo-card.amber .logo-card-label { color: rgba(237,216,190,0.5); }
+
+    .brand-logo { display: flex; align-items: center; gap: 10px; }
+    .brand-logo-mark {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .brand-logo-mark.on-light  { background: var(--amber); }
+    .brand-logo-mark.on-dark   { background: rgba(237,216,190,0.12); border: 1px solid rgba(237,216,190,0.2); }
+    .brand-logo-mark.on-amber  { background: rgba(255,255,255,0.2); }
+    .brand-logo-text { font-family: var(--serif); font-size: 17px; font-weight: 600; line-height: 1.2; }
+    .brand-logo-text.on-light  { color: var(--espresso); }
+    .brand-logo-text.on-dark,
+    .brand-logo-text.on-amber  { color: #EDD8BE; }
+    .brand-logo-tagline { font-family: var(--sans); font-size: 10px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; display: block; }
+    .brand-logo-tagline.on-light  { color: var(--rust-lt); }
+    .brand-logo-tagline.on-dark,
+    .brand-logo-tagline.on-amber  { color: rgba(237,216,190,0.5); }
+
+    /* ── LOGO CLEARSPACE ── */
+    .clearspace-demo {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .clearspace-inner {
+      outline: 1.5px dashed rgba(193,122,58,0.4);
+      padding: 24px;
+      position: relative;
+    }
+    .clearspace-label {
+      position: absolute;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+    }
+    .clearspace-label.top    { top: -18px; left: 50%; transform: translateX(-50%); }
+    .clearspace-label.bottom { bottom: -18px; left: 50%; transform: translateX(-50%); }
+    .clearspace-label.left   { left: -28px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+    .clearspace-label.right  { right: -28px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+
+    /* ── COLOR PALETTE ── */
+    .color-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    @media (max-width:700px) { .color-grid { grid-template-columns: repeat(2,1fr); } }
+
+    .color-card { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    .color-swatch { height: 80px; }
+    .color-info { background: var(--white); padding: 14px 16px; }
+    .color-name { font-size: 13px; font-weight: 500; color: var(--espresso); margin-bottom: 4px; }
+    .color-hex  { font-family: var(--mono); font-size: 12px; color: var(--rust-lt); }
+    .color-usage { font-size: 11px; color: var(--rust-lt); margin-top: 4px; }
+
+    /* ── TYPOGRAPHY ── */
+    .type-samples { display: flex; flex-direction: column; gap: 24px; }
+    .type-sample { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px 32px; }
+    .type-meta { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+    .type-label { font-size: 11px; font-weight: 500; color: var(--amber); text-transform: uppercase; letter-spacing: 0.1em; }
+    .type-spec  { font-family: var(--mono); font-size: 11px; color: var(--rust-lt); }
+    .type-do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+    @media (max-width:600px) { .type-do-dont { grid-template-columns: 1fr; } }
+    .type-do   { background: rgba(193,122,58,0.06); border: 1px solid rgba(193,122,58,0.2); border-radius: 8px; padding: 14px 16px; font-size: 13px; color: var(--rust); }
+    .type-dont { background: rgba(180,60,40,0.04); border: 1px solid rgba(180,60,40,0.15); border-radius: 8px; padding: 14px 16px; font-size: 13px; color: #7A3520; }
+    .do-label   { font-size: 11px; font-weight: 500; color: var(--amber); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .07em; }
+    .dont-label { font-size: 11px; font-weight: 500; color: #B83020; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .07em; }
+
+    /* Scale samples */
+    .type-scale { display: flex; flex-direction: column; gap: 16px; }
+    .type-scale-row { display: flex; align-items: baseline; gap: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .type-scale-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .type-scale-label { font-family: var(--mono); font-size: 11px; color: var(--rust-lt); width: 120px; flex-shrink: 0; }
+
+    /* ── VOICE & TONE ── */
+    .tone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width:600px) { .tone-grid { grid-template-columns: 1fr; } }
+    .tone-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; }
+    .tone-vs   { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; margin-bottom: 8px; }
+    .tone-yes  { color: var(--amber); }
+    .tone-no   { color: #B83020; }
+    .tone-example { font-size: 14px; color: var(--espresso); line-height: 1.55; }
+    .tone-note  { font-size: 12px; color: var(--rust-lt); margin-top: 6px; }
+
+    /* ── CTA EXAMPLES ── */
+    .cta-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+    .cta-primary   { background: var(--amber); color: #fff; border: none; padding: 12px 22px; border-radius: 8px; font-family: var(--sans); font-size: 14px; font-weight: 500; cursor: default; display: inline-flex; align-items: center; gap: 7px; }
+    .cta-secondary { background: transparent; color: var(--rust); border: 1.5px solid var(--amber); padding: 11px 20px; border-radius: 8px; font-family: var(--sans); font-size: 14px; font-weight: 500; cursor: default; display: inline-flex; align-items: center; gap: 7px; }
+    .cta-ghost     { background: transparent; color: #EDD8BE; border: 1.5px solid rgba(237,216,190,0.3); padding: 11px 20px; border-radius: 8px; font-family: var(--sans); font-size: 14px; font-weight: 500; cursor: default; display: inline-flex; align-items: center; gap: 7px; }
+    .cta-on-dark   { background: var(--walnut); padding: 20px; border-radius: 10px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+    /* ── SPACING ── */
+    .spacing-grid { display: flex; flex-direction: column; gap: 12px; }
+    .spacing-row  { display: flex; align-items: center; gap: 16px; }
+    .spacing-box  { background: var(--amber-lt); border: 1px solid #DEC9A8; border-radius: 4px; height: 20px; flex-shrink: 0; }
+    .spacing-label { font-family: var(--mono); font-size: 12px; color: var(--rust-lt); width: 60px; }
+    .spacing-desc  { font-size: 13px; color: var(--rust); }
+
+    /* ── ICONOGRAPHY ── */
+    .icon-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 12px; }
+    @media (max-width:600px) { .icon-grid { grid-template-columns: repeat(3,1fr); } }
+    .icon-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .icon-wrap { width: 40px; height: 40px; background: var(--cream); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .icon-name { font-size: 11px; color: var(--rust-lt); text-align: center; }
+
+    /* ── MISUSE ── */
+    .misuse-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    @media (max-width:600px) { .misuse-grid { grid-template-columns: 1fr; } }
+    .misuse-card { border-radius: 10px; overflow: hidden; }
+    .misuse-preview { padding: 28px 20px; display: flex; align-items: center; justify-content: center; min-height: 100px; }
+    .misuse-label   { padding: 12px 14px; background: var(--white); border: 1px solid var(--border); border-top: none; }
+    .misuse-rule    { font-size: 12px; font-weight: 500; color: #B83020; margin-bottom: 2px; }
+    .misuse-desc    { font-size: 11px; color: var(--rust-lt); }
+
+    /* ── COMPONENT EXAMPLES ── */
+    .comp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    @media (max-width:600px) { .comp-row { grid-template-columns: 1fr; } }
+    .comp-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: var(--amber-lt); color: #7A4A18; font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 999px; }
+    .badge-dot { width: 6px; height: 6px; background: var(--amber); border-radius: 50%; }
+    .area-chip-sm { background: var(--cream); border: 1px solid var(--cream-dk); border-radius: 999px; padding: 4px 12px; font-size: 12px; color: var(--rust); display: inline-block; margin: 3px; }
+    .trust-mini { display: flex; gap: 24px; flex-wrap: wrap; }
+    .trust-mini-item { text-align: center; }
+    .trust-mini-num { font-family: var(--serif); font-size: 22px; color: #EDD8BE; }
+    .trust-mini-lbl { font-size: 11px; color: rgba(237,216,190,0.55); }
+    .review-mini { background: var(--cream); border-radius: 10px; padding: 16px; }
+    .stars-mini { display: flex; gap: 2px; margin-bottom: 8px; }
+    .star-mini  { width: 11px; height: 11px; background: var(--amber); clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
+    .review-mini-text { font-family: var(--serif); font-size: 13px; font-style: italic; color: var(--espresso); line-height: 1.5; }
+
+    /* ── FOOTER ── */
+    .guide-footer { background: var(--walnut); padding: 40px 64px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    @media (max-width:700px) { .guide-footer { padding: 32px 20px; flex-direction: column; text-align: center; } }
+    .guide-footer-brand { font-family: var(--serif); font-size: 16px; color: #EDD8BE; }
+    .guide-footer-note  { font-size: 12px; color: rgba(237,216,190,0.4); }
+  </style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-version">v1.0 · 2025</div>
+  <div class="cover-eyebrow">Brand Asset Guidelines</div>
+  <h1 class="cover-title">Alex Appliance<br>Repair Pro</h1>
+  <p class="cover-sub">A complete reference for logo usage, color, typography, tone of voice, and UI components.</p>
+</div>
+
+<div class="page">
+
+  <!-- ── 01 BRAND IDENTITY ── -->
+  <div class="section">
+    <div class="section-number">01</div>
+    <h2 class="section-title">Brand Identity</h2>
+    <p class="section-desc">Alex Appliance Repair Pro is a warm, trustworthy home services brand. The personality is like a knowledgeable neighbor — competent and confident, but never corporate or cold.</p>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:32px;margin-bottom:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:11px;font-weight:500;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Brand Name</div>
+          <div style="font-family:var(--serif);font-size:18px;color:var(--espresso);">Alex Appliance<br>Repair Pro</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:500;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Tagline</div>
+          <div style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--espresso);">"Your home,<br>working again."</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:500;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Sub-tagline</div>
+          <div style="font-size:15px;color:var(--rust);line-height:1.5;">Professional Home Services</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:32px;">
+      <div style="font-size:11px;font-weight:500;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;">Brand Personality</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;flex-wrap:wrap;">
+        <div style="text-align:center;padding:16px;background:var(--cream);border-radius:10px;">
+          <div style="font-size:22px;margin-bottom:6px;">🏠</div>
+          <div style="font-size:13px;font-weight:500;color:var(--espresso);">Homey</div>
+          <div style="font-size:12px;color:var(--rust-lt);margin-top:4px;">Warm, approachable, local</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:var(--cream);border-radius:10px;">
+          <div style="font-size:22px;margin-bottom:6px;">🔧</div>
+          <div style="font-size:13px;font-weight:500;color:var(--espresso);">Competent</div>
+          <div style="font-size:12px;color:var(--rust-lt);margin-top:4px;">Expert, reliable, thorough</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:var(--cream);border-radius:10px;">
+          <div style="font-size:22px;margin-bottom:6px;">🤝</div>
+          <div style="font-size:13px;font-weight:500;color:var(--espresso);">Trustworthy</div>
+          <div style="font-size:12px;color:var(--rust-lt);margin-top:4px;">Transparent, honest, caring</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:var(--cream);border-radius:10px;">
+          <div style="font-size:22px;margin-bottom:6px;">⚡</div>
+          <div style="font-size:13px;font-weight:500;color:var(--espresso);">Responsive</div>
+          <div style="font-size:12px;color:var(--rust-lt);margin-top:4px;">Fast, available, proactive</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── 02 LOGO ── -->
+  <div class="section">
+    <div class="section-number">02</div>
+    <h2 class="section-title">Logo</h2>
+    <p class="section-desc">The logo combines a house icon (representing home and care) with our name in Playfair Display serif. Always use the approved versions below — never recreate or alter the logo.</p>
+
+    <div class="logo-grid" style="margin-bottom:16px;">
+      <!-- Light -->
+      <div class="logo-card light">
+        <div class="logo-card-label">Primary — Light background</div>
+        <div class="brand-logo">
+          <div class="brand-logo-mark on-light">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9l7-7 7 7v9"/><rect x="7" y="11" width="6" height="7"/></svg>
+          </div>
+          <div class="brand-logo-text on-light">
+            Alex Appliance Repair Pro
+            <span class="brand-logo-tagline on-light">Professional Home Services</span>
+          </div>
+        </div>
+      </div>
+      <!-- Dark -->
+      <div class="logo-card dark">
+        <div class="logo-card-label">Reversed — Dark background</div>
+        <div class="brand-logo">
+          <div class="brand-logo-mark on-dark">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#EDD8BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9l7-7 7 7v9"/><rect x="7" y="11" width="6" height="7"/></svg>
+          </div>
+          <div class="brand-logo-text on-dark">
+            Alex Appliance Repair Pro
+            <span class="brand-logo-tagline on-dark">Professional Home Services</span>
+          </div>
+        </div>
+      </div>
+      <!-- Cream -->
+      <div class="logo-card cream">
+        <div class="logo-card-label">On cream / hero background</div>
+        <div class="brand-logo">
+          <div class="brand-logo-mark on-light">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9l7-7 7 7v9"/><rect x="7" y="11" width="6" height="7"/></svg>
+          </div>
+          <div class="brand-logo-text on-light">
+            Alex Appliance Repair Pro
+            <span class="brand-logo-tagline on-light">Professional Home Services</span>
+          </div>
+        </div>
+      </div>
+      <!-- Amber -->
+      <div class="logo-card amber">
+        <div class="logo-card-label">On amber — avoid if possible</div>
+        <div class="brand-logo">
+          <div class="brand-logo-mark on-amber">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#EDD8BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9l7-7 7 7v9"/><rect x="7" y="11" width="6" height="7"/></svg>
+          </div>
+          <div class="brand-logo-text on-amber">
+            Alex Appliance Repair Pro
+            <span class="brand-logo-tagline on-amber">Professional Home Services</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clearspace -->
+    <div style="margin-bottom:16px;">
+      <div style="font-size:13px;font-weight:500;color:var(--espresso);margin-bottom:12px;">Clear space</div>
+      <div class="clearspace-demo">
+        <div class="clearspace-inner">
+          <div class="clearspace-label top">1× icon height</div>
+          <div class="clearspace-label bottom">1× icon height</div>
+          <div class="clearspace-label left">1×</div>
+          <div class="clearspace-label right">1×</div>
+          <div class="brand-logo">
+            <div class="brand-logo-mark on-light" style="width:36px;height:36px;">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9l7-7 7 7v9"/><rect x="7" y="11" width="6" height="7"/></svg>
+            </div>
+            <div class="brand-logo-text on-light" style="font-size:15px;">Alex Appliance Repair Pro<span class="brand-logo-tagline on-light">Professional Home Services</span></div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--rust-lt);margin-top:12px;">Always maintain clear space equal to the height of the logo mark on all sides. Never crowd the logo with other elements.</p>
+    </div>
+
+    <!-- Misuse -->
+    <div style="font-size:13px;font-weight:500;color:var(--espresso);margin-bottom:12px;">Logo don'ts</div>
+    <div class="misuse-grid">
+      <div class="misuse-card">
+        <div class="misuse-preview" style="background:#6B4226;">
+          <div class="brand-logo">
+            <div class="brand-logo-mark on-light"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9l7-7 7 7v9"/><rect x="7" y="11" width="6" height="7"/></svg></div>
+            <div class="brand-logo-text on-light" style="font-size:13px;color:#fff;opacity:0.5;">Alex Appliance Repair Pro<span class="brand-logo-tagline on-light">Professional Home Services</span></div>
+          </div>
+        </div>
+        <div class="misuse-label">
+          <div class="misuse-rule">❌ Low contrast background</div>
+          <div class="misuse-desc">Never use light logo on low-contrast colors</div>
+        </div>
+      </div>
+      <div class="misuse-card">
+        <div class="misuse-preview" style="background:var(--white);border:1px solid var(--border);">
+          <div class="brand-logo" style="transform:rotate(-15deg);">
+            <div class="brand-logo-mark on-light"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9l7-7 7 7v9"/><rect x="7" y="11" width="6" height="7"/></svg></div>
+            <div class="brand-logo-text on-light" style="font-size:13px;">Alex Appliance Repair Pro<span class="brand-logo-tagline on-light">Professional Home Services</span></div>
+          </div>
+        </div>
+        <div class="misuse-label">
+          <div class="misuse-rule">❌ Rotation</div>
+          <div class="misuse-desc">Never rotate or skew the logo</div>
+        </div>
+      </div>
+      <div class="misuse-card">
+        <div class="misuse-preview" style="background:var(--white);border:1px solid var(--border);">
+          <div class="brand-logo">
+            <div class="brand-logo-mark on-light" style="background:#3B82F6;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9l7-7 7 7v9"/><rect x="7" y="11" width="6" height="7"/></svg></div>
+            <div class="brand-logo-text on-light" style="font-size:13px;color:#3B82F6;">Alex Appliance Repair Pro<span class="brand-logo-tagline on-light" style="color:#6B7280;">Professional Home Services</span></div>
+          </div>
+        </div>
+        <div class="misuse-label">
+          <div class="misuse-rule">❌ Off-brand colors</div>
+          <div class="misuse-desc">Never recolor the logo outside the brand palette</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── 03 COLOR PALETTE ── -->
+  <div class="section">
+    <div class="section-number">03</div>
+    <h2 class="section-title">Color Palette</h2>
+    <p class="section-desc">Our palette is warm-earthy — anchored in amber, cream, and walnut. These colors evoke reliability, warmth, and expertise without feeling corporate.</p>
+
+    <div class="color-grid" style="margin-bottom:24px;">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#C17A3A;"></div>
+        <div class="color-info"><div class="color-name">Amber</div><div class="color-hex">#C17A3A</div><div class="color-usage">Primary · CTAs · Accents · Icons</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#9A5E24;"></div>
+        <div class="color-info"><div class="color-name">Amber Dark</div><div class="color-hex">#9A5E24</div><div class="color-usage">Hover states · Pressed states</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#EDD8BE;"></div>
+        <div class="color-info"><div class="color-name">Amber Light</div><div class="color-hex">#EDD8BE</div><div class="color-usage">Badges · Chips · Highlights</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#F5EDE0;"></div>
+        <div class="color-info"><div class="color-name">Cream</div><div class="color-hex">#F5EDE0</div><div class="color-usage">Hero · Section backgrounds</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#3D1F08;"></div>
+        <div class="color-info"><div class="color-name">Walnut</div><div class="color-hex">#3D1F08</div><div class="color-usage">Dark sections · Trust bar · CTA bg</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#2C1A0A;"></div>
+        <div class="color-info"><div class="color-name">Espresso</div><div class="color-hex">#2C1A0A</div><div class="color-usage">Primary text · Headings</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#6B4226;"></div>
+        <div class="color-info"><div class="color-name">Rust</div><div class="color-hex">#6B4226</div><div class="color-usage">Body copy · Subheadlines</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FFFDF9;"></div>
+        <div class="color-info"><div class="color-name">Off-White</div><div class="color-hex">#FFFDF9</div><div class="color-usage">Cards · Nav · Form fields</div></div>
+      </div>
+    </div>
+
+    <!-- Accessibility -->
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px 28px;">
+      <div style="font-size:11px;font-weight:500;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">Accessibility — Contrast Ratios</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <div style="width:140px;background:#C17A3A;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:500;">Amber on white</div>
+          <div style="font-family:var(--mono);font-size:12px;color:var(--rust-lt);">3.1:1 · Use for large text (18px+) only</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <div style="width:140px;background:#2C1A0A;color:#FFFDF9;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:500;">Espresso on white</div>
+          <div style="font-family:var(--mono);font-size:12px;color:var(--rust-lt);">17.5:1 · AAA — preferred for body text</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <div style="width:140px;background:#3D1F08;color:#EDD8BE;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:500;">Cream on walnut</div>
+          <div style="font-family:var(--mono);font-size:12px;color:var(--rust-lt);">9.8:1 · AAA — use for dark sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── 04 TYPOGRAPHY ── -->
+  <div class="section">
+    <div class="section-number">04</div>
+    <h2 class="section-title">Typography</h2>
+    <p class="section-desc">Two typefaces work in harmony: Playfair Display for emotional, editorial headlines and DM Sans for clean, readable UI and body text.</p>
+
+    <div class="type-samples">
+      <!-- Playfair -->
+      <div class="type-sample">
+        <div class="type-meta">
+          <div><div class="type-label">Display / Headlines</div><div style="font-family:var(--serif);font-size:13px;color:var(--rust);margin-top:4px;">Playfair Display</div></div>
+          <div class="type-spec">Google Fonts · Free</div>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-row">
+            <div class="type-scale-label">H1 · 64px/500</div>
+            <div style="font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:500;color:var(--espresso);line-height:1.1;">Your home, working again.</div>
+          </div>
+          <div class="type-scale-row">
+            <div class="type-scale-label">H2 · 38px/500</div>
+            <div style="font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:500;color:var(--espresso);">Reliable repairs for every room</div>
+          </div>
+          <div class="type-scale-row">
+            <div class="type-scale-label">H3 · 22px/500</div>
+            <div style="font-family:var(--serif);font-size:22px;font-weight:500;color:var(--espresso);">Schedule your repair</div>
+          </div>
+          <div class="type-scale-row">
+            <div class="type-scale-label">Quote · 16px italic</div>
+            <div style="font-family:var(--serif);font-size:16px;font-style:italic;color:var(--espresso);">"My washer stopped mid-cycle. Alex had someone here by noon."</div>
+          </div>
+        </div>
+        <div class="type-do-dont">
+          <div class="type-do"><div class="do-label">✓ Do</div>Use for page headlines, section titles, customer quotes, and the main hero tagline.</div>
+          <div class="type-dont"><div class="dont-label">✗ Don't</div>Use for body copy, form labels, navigation links, or UI elements smaller than 14px.</div>
+        </div>
+      </div>
+
+      <!-- DM Sans -->
+      <div class="type-sample">
+        <div class="type-meta">
+          <div><div class="type-label">UI / Body</div><div style="font-size:13px;color:var(--rust);margin-top:4px;">DM Sans</div></div>
+          <div class="type-spec">Google Fonts · Free</div>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-row">
+            <div class="type-scale-label">Body · 17px/400</div>
+            <div style="font-size:17px;color:var(--rust);line-height:1.65;">Expert appliance repair by technicians you can actually trust.</div>
+          </div>
+          <div class="type-scale-row">
+            <div class="type-scale-label">Label · 14px/500</div>
+            <div style="font-size:14px;font-weight:500;color:var(--espresso);">Book a repair today</div>
+          </div>
+          <div class="type-scale-row">
+            <div class="type-scale-label">Small · 13px/400</div>
+            <div style="font-size:13px;color:var(--rust);">No commitment required · 90-day warranty on all repairs</div>
+          </div>
+          <div class="type-scale-row">
+            <div class="type-scale-label">Eyebrow · 11px/500</div>
+            <div style="font-size:11px;font-weight:500;color:var(--amber);text-transform:uppercase;letter-spacing:.12em;">What we fix</div>
+          </div>
+        </div>
+        <div class="type-do-dont">
+          <div class="type-do"><div class="do-label">✓ Do</div>Use for body copy, CTAs, nav links, form labels, eyebrows, badges, and all UI text.</div>
+          <div class="type-dont"><div class="dont-label">✗ Don't</div>Use for main headlines or large display text — that's Playfair Display's role.</div>
+        </div>
+      </div>
+
+      <!-- DM Mono -->
+      <div class="type-sample">
+        <div class="type-meta">
+          <div><div class="type-label">Mono / Code / Labels</div><div style="font-family:var(--mono);font-size:13px;color:var(--rust);margin-top:4px;">DM Mono</div></div>
+          <div class="type-spec">Google Fonts · Free · Supplemental only</div>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-row">
+            <div class="type-scale-label">Mono · 12px/400</div>
+            <div style="font-family:var(--mono);font-size:12px;color:var(--rust-lt);">#C17A3A · 01 · v1.0 · Mon–Fri 7am–7pm</div>
+          </div>
+        </div>
+        <div class="type-do-dont">
+          <div class="type-do"><div class="do-label">✓ Do</div>Use for hex values, version numbers, technical labels, and spec callouts.</div>
+          <div class="type-dont"><div class="dont-label">✗ Don't</div>Use in customer-facing body copy or headlines.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── 05 SPACING & RADIUS ── -->
+  <div class="section">
+    <div class="section-number">05</div>
+    <h2 class="section-title">Spacing & Radius</h2>
+    <p class="section-desc">Generous spacing and soft corner radii reinforce the warm, approachable brand feel.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <!-- Spacing -->
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px 28px;">
+        <div style="font-size:11px;font-weight:500;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;">Spacing Scale</div>
+        <div class="spacing-grid">
+          <div class="spacing-row"><div class="spacing-label">4px</div><div class="spacing-box" style="width:4px;"></div><div class="spacing-desc">Gap between icon and text</div></div>
+          <div class="spacing-row"><div class="spacing-label">8px</div><div class="spacing-box" style="width:8px;"></div><div class="spacing-desc">Chip inner padding</div></div>
+          <div class="spacing-row"><div class="spacing-label">12px</div><div class="spacing-box" style="width:12px;"></div><div class="spacing-desc">Grid gap (small)</div></div>
+          <div class="spacing-row"><div class="spacing-label">16px</div><div class="spacing-box" style="width:16px;"></div><div class="spacing-desc">Card grid gap</div></div>
+          <div class="spacing-row"><div class="spacing-label">24px</div><div class="spacing-box" style="width:24px;"></div><div class="spacing-desc">Card inner padding</div></div>
+          <div class="spacing-row"><div class="spacing-label">40px</div><div class="spacing-box" style="width:40px;"></div><div class="spacing-desc">Page horizontal padding</div></div>
+          <div class="spacing-row"><div class="spacing-label">80px</div><div class="spacing-box" style="width:80px;"></div><div class="spacing-desc">Section vertical padding</div></div>
+        </div>
+      </div>
+      <!-- Border Radius -->
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px 28px;">
+        <div style="font-size:11px;font-weight:500;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;">Border Radius</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div style="width:40px;height:40px;background:var(--amber-lt);border:1px solid #DEC9A8;border-radius:4px;flex-shrink:0;"></div>
+            <div><div style="font-family:var(--mono);font-size:12px;color:var(--rust-lt);">4px</div><div style="font-size:13px;color:var(--rust);">Tags, small badges</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div style="width:40px;height:40px;background:var(--amber-lt);border:1px solid #DEC9A8;border-radius:8px;flex-shrink:0;"></div>
+            <div><div style="font-family:var(--mono);font-size:12px;color:var(--rust-lt);">8px · --radius-sm</div><div style="font-size:13px;color:var(--rust);">Buttons, inputs, small cards</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div style="width:40px;height:40px;background:var(--amber-lt);border:1px solid #DEC9A8;border-radius:12px;flex-shrink:0;"></div>
+            <div><div style="font-family:var(--mono);font-size:12px;color:var(--rust-lt);">12px · --radius</div><div style="font-size:13px;color:var(--rust);">Service cards, review cards</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div style="width:40px;height:40px;background:var(--amber-lt);border:1px solid #DEC9A8;border-radius:16px;flex-shrink:0;"></div>
+            <div><div style="font-family:var(--mono);font-size:12px;color:var(--rust-lt);">16px</div><div style="font-size:13px;color:var(--rust);">Hero card, booking form</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div style="width:40px;height:20px;background:var(--amber-lt);border:1px solid #DEC9A8;border-radius:999px;flex-shrink:0;"></div>
+            <div><div style="font-family:var(--mono);font-size:12px;color:var(--rust-lt);">999px (pill)</div><div style="font-size:13px;color:var(--rust);">Badges, chips, area tags</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── 06 ICONOGRAPHY ── -->
+  <div class="section">
+    <div class="section-number">06</div>
+    <h2 class="section-title">Iconography</h2>
+    <p class="section-desc">All icons use an inline SVG line style — 1.5–1.8px stroke, rounded caps and joins, amber stroke color on cream backgrounds. Never use filled/solid icon styles.</p>
+
+    <div class="icon-grid" style="margin-bottom:20px;">
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="1" width="18" height="20" rx="2.5"/><circle cx="11" cy="13" r="4.5"/><line x1="7" y1="5" x2="15" y2="5"/></svg></div><div class="icon-name">Washer</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="1" width="18" height="20" rx="2.5"/><line x1="6" y1="8" x2="16" y2="8"/><line x1="6" y1="12" x2="12" y2="12"/></svg></div><div class="icon-name">Fridge</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><rect x="1" y="5" width="20" height="14" rx="2"/><path d="M6 5V2.5M11 5V2.5M16 5V2.5"/><circle cx="11" cy="12" r="3"/></svg></div><div class="icon-name">Oven</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="1" width="18" height="20" rx="2.5"/><path d="M6 7h10M6 11h8M6 15h6"/></svg></div><div class="icon-name">Dishwasher</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="2" width="18" height="13" rx="2"/><path d="M2 15h18M8 19h6"/></svg></div><div class="icon-name">Dryer</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="16" height="16" rx="3"/><circle cx="11" cy="11" r="3.5"/></svg></div><div class="icon-name">Microwave</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="M6 1v3M14 1v3M2 9h16"/></svg></div><div class="icon-name">Calendar</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><path d="M2 2.5C2 2.5 3 1 4.5 1c.5 0 1 .5 1.5 1.5L7 4.5c.5 1 0 1.5-.5 2C6 7 5.5 7.5 6 8.5c.5 1 2 2.5 3 3 1 .5 1.5 0 2-.5s1-1 2-.5l2.5 1c1 .5 1.5 1 1.5 1.5 0 1.5-1.5 2.5-1.5 2.5C7 18 -2 7 2 2.5z"/></svg></div><div class="icon-name">Phone</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><path d="M10 1C7.2 1 5 3.2 5 6c0 4 5 9 5 9s5-5 5-9c0-2.8-2.2-5-5-5z"/><circle cx="10" cy="6" r="1.5"/></svg></div><div class="icon-name">Location</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><path d="M3 18V9l7-7 7 7v9"/><rect x="7" y="11" width="6" height="7"/></svg></div><div class="icon-name">Home</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><polyline points="3,10 8,15 17,5"/></svg></div><div class="icon-name">Check</div></div>
+      <div class="icon-card"><div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#C17A3A" stroke-width="1.6" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg></div><div class="icon-name">Clock</div></div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 22px;">
+      <div style="font-size:13px;font-weight:500;color:var(--espresso);margin-bottom:8px;">Icon style rules</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="font-size:13px;color:var(--rust);">· Stroke weight: <span style="font-family:var(--mono);font-size:12px;">1.5–1.8px</span> · Always use <span style="font-family:var(--mono);font-size:12px;">stroke-linecap="round"</span> and <span style="font-family:var(--mono);font-size:12px;">stroke-linejoin="round"</span></div>
+        <div style="font-size:13px;color:var(--rust);">· Icon color: <span style="font-family:var(--mono);font-size:12px;color:var(--amber);">#C17A3A</span> (amber) on cream/white · <span style="font-family:var(--mono);font-size:12px;color:#9A9A9A;">#EDD8BE</span> on dark/walnut backgrounds</div>
+        <div style="font-size:13px;color:var(--rust);">· Icon containers: 40–44px, cream background <span style="font-family:var(--mono);font-size:12px;">#F5EDE0</span>, 8–10px border-radius</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── 07 UI COMPONENTS ── -->
+  <div class="section">
+    <div class="section-number">07</div>
+    <h2 class="section-title">UI Components</h2>
+    <p class="section-desc">Core reusable components extracted from the website. Use consistently across all digital touchpoints.</p>
+
+    <!-- Buttons -->
+    <div style="font-size:13px;font-weight:500;color:var(--espresso);margin-bottom:12px;">Buttons</div>
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-bottom:16px;">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+        <button class="cta-primary">Book a repair today</button>
+        <button class="cta-secondary">Call us now</button>
+      </div>
+      <div class="cta-on-dark">
+        <button class="cta-primary">Schedule a free diagnosis</button>
+        <button class="cta-ghost">Call (713) 555-0100</button>
+      </div>
+    </div>
+
+    <!-- Badges & Chips -->
+    <div style="font-size:13px;font-weight:500;color:var(--espresso);margin-bottom:12px;">Badges &amp; chips</div>
+    <div class="comp-row">
+      <div class="comp-card">
+        <div style="font-size:11px;color:var(--rust-lt);margin-bottom:14px;">Status badge</div>
+        <div class="badge"><div class="badge-dot"></div>Same-day service available</div>
+      </div>
+      <div class="comp-card">
+        <div style="font-size:11px;color:var(--rust-lt);margin-bottom:14px;">Area chips</div>
+        <div>
+          <span class="area-chip-sm">Houston</span><span class="area-chip-sm">Katy</span><span class="area-chip-sm">Sugar Land</span><span class="area-chip-sm">The Woodlands</span><span class="area-chip-sm">Pearland</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust bar & Review -->
+    <div class="comp-row">
+      <div class="comp-card" style="background:var(--walnut);">
+        <div style="font-size:11px;color:rgba(237,216,190,0.4);margin-bottom:16px;">Trust bar item</div>
+        <div class="trust-mini">
+          <div class="trust-mini-item"><div class="trust-mini-num">2,400+</div><div class="trust-mini-lbl">Repairs completed</div></div>
+          <div class="trust-mini-item"><div class="trust-mini-num">4.9 ★</div><div class="trust-mini-lbl">Average rating</div></div>
+          <div class="trust-mini-item"><div class="trust-mini-num">90-day</div><div class="trust-mini-lbl">Warranty</div></div>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div style="font-size:11px;color:var(--rust-lt);margin-bottom:14px;">Review card</div>
+        <div class="review-mini">
+          <div class="stars-mini"><div class="star-mini"></div><div class="star-mini"></div><div class="star-mini"></div><div class="star-mini"></div><div class="star-mini"></div></div>
+          <div class="review-mini-text">"Alex's team had someone here by noon. Absolute lifesavers."</div>
+          <div style="font-size:12px;color:var(--rust-lt);margin-top:8px;font-weight:500;">Maria T. · Houston, TX</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form field -->
+    <div style="font-size:13px;font-weight:500;color:var(--espresso);margin-bottom:12px;margin-top:16px;">Form fields</div>
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px 28px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:500px;">
+        <div>
+          <label style="display:block;font-size:13px;font-weight:500;color:var(--rust);margin-bottom:6px;">First name</label>
+          <div style="width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;color:var(--rust-lt);background:var(--white);">Maria</div>
+        </div>
+        <div>
+          <label style="display:block;font-size:13px;font-weight:500;color:var(--rust);margin-bottom:6px;">Appliance type</label>
+          <div style="width:100%;padding:11px 14px;border:1.5px solid var(--amber);border-radius:8px;font-size:14px;color:var(--espresso);background:var(--white);">Washing machine</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--rust-lt);margin-top:12px;">Default border: <span style="font-family:var(--mono);">rgba(161,107,56,0.2)</span> · Focus border: <span style="font-family:var(--mono);color:var(--amber);">#C17A3A</span> · Corner radius: <span style="font-family:var(--mono);">8px</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── 08 VOICE & TONE ── -->
+  <div class="section">
+    <div class="section-number">08</div>
+    <h2 class="section-title">Voice &amp; Tone</h2>
+    <p class="section-desc">We write like a knowledgeable neighbor — warm, direct, and reassuring. Never corporate, never salesy. Every word should make the customer feel that help is already on the way.</p>
+
+    <div class="tone-grid">
+      <div class="tone-card">
+        <div class="tone-vs"><span class="tone-yes">✓ Say this</span></div>
+        <div class="tone-example">"We'll have someone there today."</div>
+        <div class="tone-note">Direct, confident, action-oriented</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-vs"><span class="tone-no">✗ Not this</span></div>
+        <div class="tone-example">"Our team will endeavor to schedule a technician at your earliest convenience."</div>
+        <div class="tone-note">Corporate, vague, and cold</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-vs"><span class="tone-yes">✓ Say this</span></div>
+        <div class="tone-example">"No fix, no fee — your diagnosis is always free."</div>
+        <div class="tone-note">Simple, reassuring, memorable</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-vs"><span class="tone-no">✗ Not this</span></div>
+        <div class="tone-example">"Complimentary diagnostic assessment included with all service appointments."</div>
+        <div class="tone-note">Jargon-heavy, feels like a contract</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-vs"><span class="tone-yes">✓ Say this</span></div>
+        <div class="tone-example">"Your washer's acting up? We've seen it all — and fixed it all."</div>
+        <div class="tone-note">Relatable, confident, slightly playful</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-vs"><span class="tone-no">✗ Not this</span></div>
+        <div class="tone-example">"Leverage our expertise for optimized appliance performance outcomes."</div>
+        <div class="tone-note">Meaningless buzzwords</div>
+      </div>
+    </div>
+
+    <div style="background:var(--walnut);border-radius:12px;padding:28px 32px;margin-top:16px;">
+      <div style="font-size:11px;font-weight:500;color:#C8986A;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;">Writing principles</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="font-size:14px;color:#EDD8BE;line-height:1.65;">🏠 <strong>Home first</strong> — speak to homeowners, not to business clients. Use "your home," "your washer," "your family."</div>
+        <div style="font-size:14px;color:#EDD8BE;line-height:1.65;">⚡ <strong>Action-led</strong> — start CTAs with strong verbs: Book, Schedule, Call, Fix, Get.</div>
+        <div style="font-size:14px;color:#EDD8BE;line-height:1.65;">🤝 <strong>Honest</strong> — never overpromise. "Most repairs" not "all repairs." "Usually same-day" not "always."</div>
+        <div style="font-size:14px;color:#EDD8BE;line-height:1.65;">✂️ <strong>Short sentences</strong> — aim for under 20 words per sentence. Break long ideas into two lines.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── 09 CSS VARIABLES ── -->
+  <div class="section">
+    <div class="section-number">09</div>
+    <h2 class="section-title">CSS Variables Reference</h2>
+    <p class="section-desc">Copy these variables into any new project to stay on-brand instantly.</p>
+
+    <div style="background:var(--espresso);border-radius:12px;padding:28px 32px;overflow-x:auto;">
+      <pre style="font-family:var(--mono);font-size:13px;line-height:1.8;color:#EDD8BE;white-space:pre;">:root {
+  <span style="color:#C8986A;">/* Colors */</span>
+  --amber:      #C17A3A;  <span style="color:#9A6B3E;">/* Primary · CTAs · Icons */</span>
+  --amber-dk:   #9A5E24;  <span style="color:#9A6B3E;">/* Hover states */</span>
+  --amber-lt:   #EDD8BE;  <span style="color:#9A6B3E;">/* Badges · Chips */</span>
+  --cream:      #F5EDE0;  <span style="color:#9A6B3E;">/* Hero & section backgrounds */</span>
+  --cream-dk:   #EAD9C3;  <span style="color:#9A6B3E;">/* Borders on cream */</span>
+  --walnut:     #3D1F08;  <span style="color:#9A6B3E;">/* Dark sections */</span>
+  --espresso:   #2C1A0A;  <span style="color:#9A6B3E;">/* Primary text */</span>
+  --rust:       #6B4226;  <span style="color:#9A6B3E;">/* Body copy */</span>
+  --rust-lt:    #9A6B3E;  <span style="color:#9A6B3E;">/* Labels · Muted text */</span>
+  --white:      #FFFDF9;  <span style="color:#9A6B3E;">/* Cards · Nav */</span>
+  --border:     rgba(161,107,56,0.2);
+
+  <span style="color:#C8986A;">/* Typography */</span>
+  --serif:      'Playfair Display', Georgia, serif;
+  --sans:       'DM Sans', sans-serif;
+  --mono:       'DM Mono', monospace;
+
+  <span style="color:#C8986A;">/* Radius */</span>
+  --radius:     12px;
+  --radius-sm:  8px;
+}</pre>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="guide-footer">
+  <div class="guide-footer-brand">Alex Appliance Repair Pro — Brand Asset Guidelines v1.0</div>
+  <div class="guide-footer-note">For internal and agency use only · Houston, TX · 2025</div>
+</div>
+
+</body>
+</html>
