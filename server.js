@@ -1,7 +1,7 @@
-const express  = require('express');
+const express    = require('express');
 const nodemailer = require('nodemailer');
-const cors     = require('cors');
-const path     = require('path');
+const cors       = require('cors');
+const path       = require('path');
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
@@ -10,6 +10,27 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
+// Validate SMTP config on startup so missing vars are obvious in logs
+const SMTP_HOST = process.env.SMTP_HOST;
+const SMTP_PORT = Number(process.env.SMTP_PORT) || 587;
+const SMTP_USER = process.env.SMTP_USER;
+const SMTP_PASS = process.env.SMTP_PASS;
+
+if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
+  console.warn('⚠️  SMTP environment variables not fully configured:');
+  console.warn('   SMTP_HOST:', SMTP_HOST  || 'MISSING');
+  console.warn('   SMTP_USER:', SMTP_USER  || 'MISSING');
+  console.warn('   SMTP_PASS:', SMTP_PASS  ? '***set***' : 'MISSING');
+}
+
+const transporter = nodemailer.createTransport({
+  host:   SMTP_HOST || 'mail.privateemail.com',
+  port:   SMTP_PORT,
+  secure: false,
+  auth:   { user: SMTP_USER, pass: SMTP_PASS },
+  tls:    { rejectUnauthorized: false },
+});
+
 app.post('/api/contact', async (req, res) => {
   const { fname, lname, phone, appliance, issue } = req.body;
 
@@ -17,18 +38,13 @@ app.post('/api/contact', async (req, res) => {
     return res.status(400).json({ ok: false, message: 'Please fill in all required fields.' });
   }
 
-  const transporter = nodemailer.createTransport({
-    host:   process.env.SMTP_HOST,
-    port:   Number(process.env.SMTP_PORT) || 587,
-    secure: process.env.SMTP_SECURE === 'true',
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
+  if (!SMTP_USER || !SMTP_PASS) {
+    console.error('Cannot send email — SMTP credentials missing.');
+    return res.status(500).json({ ok: false, message: 'Server email not configured yet.' });
+  }
 
   const mailOptions = {
-    from:    `"Alex Appliance Pro Website" <${process.env.SMTP_USER}>`,
+    from:    `"Alex Appliance Pro Website" <${SMTP_USER}>`,
     to:      'info@alexappliancepro.com',
     subject: `New Repair Request — ${appliance} (${fname} ${lname})`,
     text: [
@@ -56,11 +72,12 @@ app.post('/api/contact', async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
+    console.log(`✓ Repair request sent: ${appliance} — ${fname} ${lname}`);
     res.json({ ok: true, message: 'Request sent successfully.' });
   } catch (err) {
-    console.error('Mail error:', err.message);
-    res.status(500).json({ ok: false, message: 'Failed to send. Please call us directly.' });
+    console.error('✗ Mail error:', err.message);
+    res.status(500).json({ ok: false, message: 'Failed to send email. Please call us directly at (832) 979-4383.' });
   }
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`✓ Server running on port ${PORT}`));
