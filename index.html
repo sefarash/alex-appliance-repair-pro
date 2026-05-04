@@ -494,8 +494,15 @@
       cursor:pointer; transition:background .2s,transform .15s;
       margin-top:4px;
     }
-    .form-submit:hover  { background:var(--amber-dk); }
-    .form-submit:active { transform:scale(.98); }
+    .form-submit:hover    { background:var(--amber-dk); }
+    .form-submit:active   { transform:scale(.98); }
+    .form-submit:disabled { opacity:.65; cursor:not-allowed; transform:none; }
+    .form-msg {
+      margin-top:12px; padding:12px 16px;
+      border-radius:var(--radius-sm); font-size:14px; display:none;
+    }
+    .form-msg.success { display:block; background:#EAF5EC; color:#276138; border:1px solid #B6DCC0; }
+    .form-msg.error   { display:block; background:#FBF0EE; color:#8B2020; border:1px solid #EDBBBB; }
 
     /* ── FAQ ── */
     .faq-list {
@@ -973,6 +980,7 @@
           </div>
         </div>
         <button type="submit" class="form-submit">Request a repair →</button>
+        <div class="form-msg" id="form-msg"></div>
       </form>
     </div>
   </div>
@@ -1142,29 +1150,45 @@
   })();
 
   // Booking form
-  document.getElementById('booking-form').addEventListener('submit', e => {
+  document.getElementById('booking-form').addEventListener('submit', async e => {
     e.preventDefault();
-    const f = e.target;
-    const fname    = f.querySelector('#fname').value.trim();
-    const lname    = f.querySelector('#lname').value.trim();
-    const phone    = f.querySelector('#phone').value.trim();
-    const appliance = f.querySelector('#appliance').value;
-    const issue    = f.querySelector('#issue').value.trim();
-
-    const subject = encodeURIComponent(`Repair Request — ${appliance} (${fname} ${lname})`);
-    const body = encodeURIComponent(
-      `Name: ${fname} ${lname}\n` +
-      `Phone: ${phone}\n` +
-      `Appliance: ${appliance}\n` +
-      `Issue: ${issue || 'Not specified'}`
-    );
-
-    window.location.href = `mailto:info@alexappliancepro.com?subject=${subject}&body=${body}`;
-
+    const f   = e.target;
     const btn = f.querySelector('.form-submit');
-    btn.textContent = '✓ Opening your email app…';
-    btn.style.background = '#4A7C59';
+    const msg = document.getElementById('form-msg');
+
+    btn.textContent = 'Sending…';
     btn.disabled = true;
+    msg.className = 'form-msg';
+
+    try {
+      const res  = await fetch('/api/contact', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fname:     f.querySelector('#fname').value.trim(),
+          lname:     f.querySelector('#lname').value.trim(),
+          phone:     f.querySelector('#phone').value.trim(),
+          appliance: f.querySelector('#appliance').value,
+          issue:     f.querySelector('#issue').value.trim(),
+        }),
+      });
+      const data = await res.json();
+
+      if (data.ok) {
+        msg.className = 'form-msg success';
+        msg.textContent = '✓ Request received! We\'ll call you shortly to confirm.';
+        f.reset();
+        btn.textContent = 'Request a repair →';
+        btn.disabled = false;
+      } else {
+        throw new Error(data.message);
+      }
+    } catch (err) {
+      msg.className = 'form-msg error';
+      msg.textContent = err.message || 'Something went wrong. Please call us directly.';
+      btn.textContent = 'Request a repair →';
+      btn.disabled = false;
+    }
   });
 </script>
 </body>
