@@ -1144,8 +1144,25 @@
   // Booking form
   document.getElementById('booking-form').addEventListener('submit', e => {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✓ Request sent — we\'ll call you shortly!';
+    const f = e.target;
+    const fname    = f.querySelector('#fname').value.trim();
+    const lname    = f.querySelector('#lname').value.trim();
+    const phone    = f.querySelector('#phone').value.trim();
+    const appliance = f.querySelector('#appliance').value;
+    const issue    = f.querySelector('#issue').value.trim();
+
+    const subject = encodeURIComponent(`Repair Request — ${appliance} (${fname} ${lname})`);
+    const body = encodeURIComponent(
+      `Name: ${fname} ${lname}\n` +
+      `Phone: ${phone}\n` +
+      `Appliance: ${appliance}\n` +
+      `Issue: ${issue || 'Not specified'}`
+    );
+
+    window.location.href = `mailto:ismayilov.rashad@gmail.com?subject=${subject}&body=${body}`;
+
+    const btn = f.querySelector('.form-submit');
+    btn.textContent = '✓ Opening your email app…';
     btn.style.background = '#4A7C59';
     btn.disabled = true;
   });
