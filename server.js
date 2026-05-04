@@ -11,22 +11,21 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
 // Validate SMTP config on startup so missing vars are obvious in logs
-const SMTP_HOST = process.env.SMTP_HOST;
-const SMTP_PORT = Number(process.env.SMTP_PORT) || 587;
+const SMTP_HOST = process.env.SMTP_HOST || 'mail.privateemail.com';
+const SMTP_PORT = Number(process.env.SMTP_PORT) || 465;
 const SMTP_USER = process.env.SMTP_USER;
 const SMTP_PASS = process.env.SMTP_PASS;
+const SMTP_SECURE = process.env.SMTP_PORT ? SMTP_PORT === 465 : true;
 
-if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
-  console.warn('⚠️  SMTP environment variables not fully configured:');
-  console.warn('   SMTP_HOST:', SMTP_HOST  || 'MISSING');
-  console.warn('   SMTP_USER:', SMTP_USER  || 'MISSING');
-  console.warn('   SMTP_PASS:', SMTP_PASS  ? '***set***' : 'MISSING');
+console.log(`SMTP config — host:${SMTP_HOST} port:${SMTP_PORT} secure:${SMTP_SECURE} user:${SMTP_USER || 'MISSING'} pass:${SMTP_PASS ? '***set***' : 'MISSING'}`);
+if (!SMTP_USER || !SMTP_PASS) {
+  console.warn('⚠️  SMTP_USER or SMTP_PASS not set — emails will fail until you add them in Railway Variables');
 }
 
 const transporter = nodemailer.createTransport({
-  host:   SMTP_HOST || 'mail.privateemail.com',
+  host:   SMTP_HOST,
   port:   SMTP_PORT,
-  secure: false,
+  secure: SMTP_SECURE,
   auth:   { user: SMTP_USER, pass: SMTP_PASS },
   tls:    { rejectUnauthorized: false },
 });
