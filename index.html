@@ -343,12 +343,13 @@
       from { transform:translateX(0); }
       to   { transform:translateX(-50%); }
     }
-    .brand-name {
-      font-family:var(--sans); font-size:20px; font-weight:700;
-      color:#C2CBD8; letter-spacing:-.02em; white-space:nowrap;
-      transition:color .25s; cursor:default; user-select:none;
+    .brand-logo {
+      height:38px; width:auto; max-width:130px;
+      object-fit:contain; flex-shrink:0;
+      filter:grayscale(1) opacity(0.35);
+      transition:filter .3s; cursor:default; user-select:none;
     }
-    .brand-name:hover { color:var(--espresso); }
+    .brand-logo:hover { filter:grayscale(0) opacity(1); }
     .brand-dot { width:5px; height:5px; border-radius:50%; background:#D8E2EE; flex-shrink:0; }
 
     /* ── SERVICES ── */
@@ -775,37 +776,29 @@
   </div>
   <div class="brands-track-wrap">
     <div class="brands-track">
-      <span class="brand-name">Whirlpool</span><span class="brand-dot"></span>
-      <span class="brand-name">Samsung</span><span class="brand-dot"></span>
-      <span class="brand-name">LG</span><span class="brand-dot"></span>
-      <span class="brand-name">GE</span><span class="brand-dot"></span>
-      <span class="brand-name">Maytag</span><span class="brand-dot"></span>
-      <span class="brand-name">KitchenAid</span><span class="brand-dot"></span>
-      <span class="brand-name">Bosch</span><span class="brand-dot"></span>
-      <span class="brand-name">Electrolux</span><span class="brand-dot"></span>
-      <span class="brand-name">Frigidaire</span><span class="brand-dot"></span>
-      <span class="brand-name">Amana</span><span class="brand-dot"></span>
-      <span class="brand-name">Kenmore</span><span class="brand-dot"></span>
-      <span class="brand-name">Sub-Zero</span><span class="brand-dot"></span>
-      <span class="brand-name">Viking</span><span class="brand-dot"></span>
-      <span class="brand-name">Thermador</span><span class="brand-dot"></span>
-      <span class="brand-name">Miele</span><span class="brand-dot"></span>
+      <img src="brand_assets/brands/whirlpool.png" alt="Whirlpool" class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/samsung.svg"   alt="Samsung"   class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/lg.svg"        alt="LG"        class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/ge.svg"        alt="GE"        class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/maytag.svg"    alt="Maytag"    class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/bosch.svg"     alt="Bosch"     class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/frigidaire.svg" alt="Frigidaire" class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/kenmore.svg"   alt="Kenmore"   class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/subzero.svg"   alt="Sub-Zero"  class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/thermador.jpg" alt="Thermador" class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/miele.svg"     alt="Miele"     class="brand-logo"><span class="brand-dot"></span>
       <!-- duplicate for seamless loop -->
-      <span class="brand-name">Whirlpool</span><span class="brand-dot"></span>
-      <span class="brand-name">Samsung</span><span class="brand-dot"></span>
-      <span class="brand-name">LG</span><span class="brand-dot"></span>
-      <span class="brand-name">GE</span><span class="brand-dot"></span>
-      <span class="brand-name">Maytag</span><span class="brand-dot"></span>
-      <span class="brand-name">KitchenAid</span><span class="brand-dot"></span>
-      <span class="brand-name">Bosch</span><span class="brand-dot"></span>
-      <span class="brand-name">Electrolux</span><span class="brand-dot"></span>
-      <span class="brand-name">Frigidaire</span><span class="brand-dot"></span>
-      <span class="brand-name">Amana</span><span class="brand-dot"></span>
-      <span class="brand-name">Kenmore</span><span class="brand-dot"></span>
-      <span class="brand-name">Sub-Zero</span><span class="brand-dot"></span>
-      <span class="brand-name">Viking</span><span class="brand-dot"></span>
-      <span class="brand-name">Thermador</span><span class="brand-dot"></span>
-      <span class="brand-name">Miele</span><span class="brand-dot"></span>
+      <img src="brand_assets/brands/whirlpool.png" alt="Whirlpool" class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/samsung.svg"   alt="Samsung"   class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/lg.svg"        alt="LG"        class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/ge.svg"        alt="GE"        class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/maytag.svg"    alt="Maytag"    class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/bosch.svg"     alt="Bosch"     class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/frigidaire.svg" alt="Frigidaire" class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/kenmore.svg"   alt="Kenmore"   class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/subzero.svg"   alt="Sub-Zero"  class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/thermador.jpg" alt="Thermador" class="brand-logo"><span class="brand-dot"></span>
+      <img src="brand_assets/brands/miele.svg"     alt="Miele"     class="brand-logo"><span class="brand-dot"></span>
     </div>
   </div>
 </section>
