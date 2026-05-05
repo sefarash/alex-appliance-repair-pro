@@ -30,7 +30,7 @@ app.post('/api/contact', async (req, res) => {
   try {
     const { error } = await resend.emails.send({
       from: 'Alex Appliance Pro <info@alexappliancepro.com>',
-      to:   ['info@alexappliancepro.com'],
+      to:   ['usaisgandar@gmail.com'],
       subject: `New Repair Request — ${appliance} (${fname} ${lname})`,
       text: [
         `Name:      ${fname} ${lname}`,
