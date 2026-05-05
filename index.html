@@ -320,6 +320,37 @@
       text-align:center;
     }
 
+    /* ── BRANDS ── */
+    .brands-section { background:var(--white); padding:56px 0 52px; overflow:hidden; }
+    .brands-heading { text-align:center; margin-bottom:36px; padding:0 48px; }
+    .brands-track-wrap {
+      overflow:hidden; position:relative;
+    }
+    .brands-track-wrap::before,
+    .brands-track-wrap::after {
+      content:''; position:absolute; top:0; bottom:0; width:120px; z-index:2;
+      pointer-events:none;
+    }
+    .brands-track-wrap::before { left:0; background:linear-gradient(to right, var(--white), transparent); }
+    .brands-track-wrap::after  { right:0; background:linear-gradient(to left,  var(--white), transparent); }
+    .brands-track {
+      display:flex; align-items:center; gap:56px;
+      width:max-content;
+      animation:brandScroll 28s linear infinite;
+    }
+    .brands-track:hover { animation-play-state:paused; }
+    @keyframes brandScroll {
+      from { transform:translateX(0); }
+      to   { transform:translateX(-50%); }
+    }
+    .brand-name {
+      font-family:var(--sans); font-size:20px; font-weight:700;
+      color:#C2CBD8; letter-spacing:-.02em; white-space:nowrap;
+      transition:color .25s; cursor:default; user-select:none;
+    }
+    .brand-name:hover { color:var(--espresso); }
+    .brand-dot { width:5px; height:5px; border-radius:50%; background:#D8E2EE; flex-shrink:0; }
+
     /* ── SERVICES ── */
     .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
     .svc-card {
@@ -735,6 +766,49 @@
     <div class="trust-item"><div class="trust-num">10+ yrs</div><div class="trust-label">Serving Houston</div></div>
   </div>
 </div>
+
+<!-- BRANDS -->
+<section class="brands-section" aria-label="Brands we repair">
+  <div class="brands-heading">
+    <div class="eyebrow">All major brands</div>
+    <h2 class="sec-title" style="margin-bottom:0">Popular Brands We Repair</h2>
+  </div>
+  <div class="brands-track-wrap">
+    <div class="brands-track">
+      <span class="brand-name">Whirlpool</span><span class="brand-dot"></span>
+      <span class="brand-name">Samsung</span><span class="brand-dot"></span>
+      <span class="brand-name">LG</span><span class="brand-dot"></span>
+      <span class="brand-name">GE</span><span class="brand-dot"></span>
+      <span class="brand-name">Maytag</span><span class="brand-dot"></span>
+      <span class="brand-name">KitchenAid</span><span class="brand-dot"></span>
+      <span class="brand-name">Bosch</span><span class="brand-dot"></span>
+      <span class="brand-name">Electrolux</span><span class="brand-dot"></span>
+      <span class="brand-name">Frigidaire</span><span class="brand-dot"></span>
+      <span class="brand-name">Amana</span><span class="brand-dot"></span>
+      <span class="brand-name">Kenmore</span><span class="brand-dot"></span>
+      <span class="brand-name">Sub-Zero</span><span class="brand-dot"></span>
+      <span class="brand-name">Viking</span><span class="brand-dot"></span>
+      <span class="brand-name">Thermador</span><span class="brand-dot"></span>
+      <span class="brand-name">Miele</span><span class="brand-dot"></span>
+      <!-- duplicate for seamless loop -->
+      <span class="brand-name">Whirlpool</span><span class="brand-dot"></span>
+      <span class="brand-name">Samsung</span><span class="brand-dot"></span>
+      <span class="brand-name">LG</span><span class="brand-dot"></span>
+      <span class="brand-name">GE</span><span class="brand-dot"></span>
+      <span class="brand-name">Maytag</span><span class="brand-dot"></span>
+      <span class="brand-name">KitchenAid</span><span class="brand-dot"></span>
+      <span class="brand-name">Bosch</span><span class="brand-dot"></span>
+      <span class="brand-name">Electrolux</span><span class="brand-dot"></span>
+      <span class="brand-name">Frigidaire</span><span class="brand-dot"></span>
+      <span class="brand-name">Amana</span><span class="brand-dot"></span>
+      <span class="brand-name">Kenmore</span><span class="brand-dot"></span>
+      <span class="brand-name">Sub-Zero</span><span class="brand-dot"></span>
+      <span class="brand-name">Viking</span><span class="brand-dot"></span>
+      <span class="brand-name">Thermador</span><span class="brand-dot"></span>
+      <span class="brand-name">Miele</span><span class="brand-dot"></span>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section id="services" class="sw on-bg" aria-labelledby="svc-h">
