@@ -544,14 +544,21 @@
       display:grid; grid-template-columns:1fr 1fr;
       gap:60px; align-items:center;
     }
-    .areas-chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .areas-chips {
+      display:flex; flex-wrap:wrap; gap:8px;
+      perspective:600px;
+    }
     .area-chip {
       background:var(--white); border:1px solid var(--border);
       border-radius:999px; padding:7px 16px;
       font-size:13px; font-weight:500; color:var(--rust);
-      transition:background .2s,border-color .2s; cursor:default;
+      transition:background .2s, border-color .2s, box-shadow .2s;
+      cursor:default; will-change:transform;
     }
-    .area-chip:hover { background:var(--amber-lt); border-color:#B8CCFF; }
+    .area-chip:hover {
+      background:var(--amber-lt); border-color:#B8CCFF;
+      box-shadow:0 4px 12px rgba(10,67,255,.1);
+    }
     .areas-note { font-size:13px; color:var(--rust-lt); margin-top:14px; line-height:1.55; }
 
     /* ── REVIEWS ── */
@@ -1146,7 +1153,7 @@
         </p>
       </div>
       <div>
-        <div class="areas-chips reveal">
+        <div class="areas-chips" id="areas-chips">
           <span class="area-chip">Houston</span>
           <span class="area-chip">Katy</span>
           <span class="area-chip">Sugar Land</span>
@@ -1523,6 +1530,22 @@
       start: 'top 70%',
       end: 'top 30%',
       scrub: 1.2,
+    },
+  });
+
+  // ── CITY CHIPS — stagger 3D pop-up ──────────────────────────────
+  gsap.from('#areas-chips .area-chip', {
+    z: -50,
+    scale: 0.5,
+    opacity: 0,
+    transformPerspective: 600,
+    duration: 0.55,
+    ease: 'back.out(1.8)',
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: '#areas',
+      start: 'top 72%',
+      toggleActions: 'play none none none',
     },
   });
 
