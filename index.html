@@ -555,13 +555,16 @@
     .areas-note { font-size:13px; color:var(--rust-lt); margin-top:14px; line-height:1.55; }
 
     /* ── REVIEWS ── */
-    .reviews-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    .reviews-grid {
+      display:grid; grid-template-columns:repeat(2,1fr); gap:16px;
+      perspective:1200px;
+    }
     .review-card {
       background:var(--white); border:1px solid var(--border);
       border-radius:var(--radius); padding:28px;
-      transition:box-shadow .2s;
+      will-change:transform; cursor:default;
+      transform-origin:center center;
     }
-    .review-card:hover { box-shadow:0 4px 20px rgba(10,27,75,.08); }
     .stars { display:flex; gap:3px; margin-bottom:14px; }
     .star {
       width:14px; height:14px; background:var(--amber);
@@ -1175,7 +1178,7 @@
     <p class="sec-sub">Real customers, real homes, real repairs — across Houston and surrounding areas.</p>
 
     <div class="reviews-grid">
-      <div class="review-card reveal">
+      <div class="review-card">
         <div class="stars" aria-label="5 stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
         <p class="review-text">"My washer stopped mid-cycle on a Monday morning. Alex's team had someone here by noon and fixed it in under an hour. Absolute lifesavers — and the technician was so polite."</p>
         <div class="reviewer-row">
@@ -1183,7 +1186,7 @@
           <div><div class="reviewer-name">Maria T.</div><div class="reviewer-detail">Houston, TX · Washing machine</div></div>
         </div>
       </div>
-      <div class="review-card reveal">
+      <div class="review-card">
         <div class="stars" aria-label="5 stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
         <p class="review-text">"Fair pricing, no upselling, and the tech explained exactly what was wrong before touching anything. My fridge is running better than ever. Will 100% call again."</p>
         <div class="reviewer-row">
@@ -1191,7 +1194,7 @@
           <div><div class="reviewer-name">James K.</div><div class="reviewer-detail">Katy, TX · Refrigerator</div></div>
         </div>
       </div>
-      <div class="review-card reveal">
+      <div class="review-card">
         <div class="stars" aria-label="5 stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
         <p class="review-text">"Oven stopped working the night before Thanksgiving. Alex himself came out and had it running in 45 minutes. I genuinely cannot thank them enough."</p>
         <div class="reviewer-row">
@@ -1199,7 +1202,7 @@
           <div><div class="reviewer-name">Sandra R.</div><div class="reviewer-detail">Sugar Land, TX · Oven</div></div>
         </div>
       </div>
-      <div class="review-card reveal">
+      <div class="review-card">
         <div class="stars" aria-label="5 stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
         <p class="review-text">"Booked online in under 2 minutes. Tech showed up early, fixed the dishwasher, and noticed a loose door latch and fixed that too. Outstanding service."</p>
         <div class="reviewer-row">
@@ -1521,6 +1524,51 @@
       end: 'top 30%',
       scrub: 1.2,
     },
+  });
+
+  // ── REVIEW CARDS — stagger scroll-in ──────────────────────────────
+  gsap.from('.review-card', {
+    scale: 0.85,
+    rotateX: 20,
+    transformPerspective: 1000,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power3.out',
+    stagger: { amount: 0.45, from: 'start' },
+    scrollTrigger: {
+      trigger: '#reviews',
+      start: 'top 72%',
+      toggleActions: 'play none none none',
+    },
+  });
+
+  // ── REVIEW CARDS — mouse-tracking 3D tilt ────────────────────────
+  document.querySelectorAll('.review-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r   = card.getBoundingClientRect();
+      const dx  = (e.clientX - (r.left + r.width  / 2)) / (r.width  / 2); // -1…1
+      const dy  = (e.clientY - (r.top  + r.height / 2)) / (r.height / 2); // -1…1
+      gsap.to(card, {
+        rotateY: dx * 8,
+        rotateX: -dy * 5,
+        transformPerspective: 800,
+        boxShadow: `${dx * 10}px ${-dy * 8}px 32px rgba(10,27,75,0.13)`,
+        ease: 'power2.out',
+        duration: 0.25,
+        overwrite: 'auto',
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, {
+        rotateY: 0,
+        rotateX: 0,
+        boxShadow: '0 1px 4px rgba(10,27,75,0.06)',
+        ease: 'power3.out',
+        duration: 0.55,
+        overwrite: 'auto',
+      });
+    });
   });
 </script>
 </body>
