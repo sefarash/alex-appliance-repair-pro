@@ -499,13 +499,20 @@
     .steps {
       display:grid; grid-template-columns:repeat(3,1fr);
       gap:0; position:relative;
+      perspective:1200px;
     }
-    .steps::before {
-      content:''; position:absolute; top:21px;
+    .steps-progress-wrap {
+      position:absolute; top:21px;
       left:calc(16.67% + 21px); right:calc(16.67% + 21px);
-      border-top:2px dashed var(--cream-dk);
+      height:2px; background:var(--cream-dk);
+      overflow:hidden; z-index:0;
     }
-    .step { padding:0 28px; }
+    .steps-progress-fill {
+      height:100%; width:100%;
+      background:var(--amber);
+      transform:scaleX(0); transform-origin:left center;
+    }
+    .step { padding:0 28px; will-change:transform,opacity; }
     .step-num {
       width:42px; height:42px; border-radius:50%;
       background:var(--amber); color:#fff;
@@ -1066,18 +1073,21 @@
     <h2 id="how-h" class="sec-title">Fixed in three easy steps</h2>
     <p class="sec-sub">No surprises, no runaround — a straightforward process that respects your time.</p>
 
-    <div class="steps">
-      <div class="step reveal">
+    <div class="steps" id="steps-container">
+      <div class="steps-progress-wrap" aria-hidden="true">
+        <div class="steps-progress-fill" id="steps-progress-fill"></div>
+      </div>
+      <div class="step" id="step-1">
         <div class="step-num">1</div>
         <div class="step-title">Book online or call</div>
         <div class="step-desc">Choose your appliance, describe the issue, and pick a time — morning, afternoon, or evening. Same-day slots available.</div>
       </div>
-      <div class="step reveal">
+      <div class="step" id="step-2">
         <div class="step-num">2</div>
         <div class="step-title">We come to you</div>
         <div class="step-desc">A certified technician arrives on time with the tools and most common parts already loaded — no second trip needed.</div>
       </div>
-      <div class="step reveal">
+      <div class="step" id="step-3">
         <div class="step-num">3</div>
         <div class="step-title">Back to normal</div>
         <div class="step-desc">We fix it, test it, clean up, and hand you a 90-day parts &amp; labor warranty. Your home, working again.</div>
@@ -1470,5 +1480,48 @@
 
 <elevenlabs-convai agent-id="agent_6301kpvr5bh7e6haxxdmrmbp8ydv"></elevenlabs-convai>
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Steps: left / right / left slide-in with rotateY perspective
+  const stepConfig = [
+    { id: '#step-1', xFrom: -90, rotY:  15 },
+    { id: '#step-2', xFrom:  90, rotY: -15 },
+    { id: '#step-3', xFrom: -90, rotY:  15 },
+  ];
+
+  stepConfig.forEach(({ id, xFrom, rotY }, i) => {
+    gsap.from(id, {
+      x: xFrom,
+      rotateY: rotY,
+      transformPerspective: 1200,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power3.out',
+      delay: i * 0.18,
+      scrollTrigger: {
+        trigger: '#steps-container',
+        start: 'top 72%',
+        toggleActions: 'play none none none',
+      },
+    });
+  });
+
+  // Progress line draws left-to-right as section scrolls into view
+  gsap.to('#steps-progress-fill', {
+    scaleX: 1,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#steps-container',
+      start: 'top 70%',
+      end: 'top 30%',
+      scrub: 1.2,
+    },
+  });
+</script>
 </body>
 </html>
