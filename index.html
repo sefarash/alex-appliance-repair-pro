@@ -337,19 +337,38 @@
     .contact-value { font-size:14px; font-weight:500; color:var(--espresso); }
 
     /* ── TRUST BAR ── */
-    .trust-bar { background:var(--walnut); padding:32px 48px; }
+    .trust-bar { background:var(--walnut); padding:40px 48px; }
     .trust-inner {
       max-width:1060px; margin:0 auto;
-      display:flex; justify-content:space-around;
-      flex-wrap:wrap; gap:24px;
+      display:flex; justify-content:center;
+      flex-wrap:wrap; gap:14px;
     }
     .trust-item {
-      text-align:center; padding:0 16px; flex:1; min-width:100px;
-      border-right:1px solid rgba(255,255,255,.08);
+      text-align:center; padding:22px 28px; flex:1; min-width:130px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.1);
+      border-top:1px solid rgba(255,255,255,.18);
+      border-radius:14px;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.1),
+        0 2px 4px rgba(0,0,0,.35),
+        0 6px 12px rgba(0,0,0,.22),
+        0 14px 28px rgba(0,0,0,.12);
+      transition:transform .35s cubic-bezier(.2,0,.2,1), box-shadow .35s ease;
+      transform-origin:center 65%;
+      cursor:default;
     }
-    .trust-item:last-child { border-right:none; }
+    .trust-item:hover {
+      transform:perspective(600px) rotateX(5deg) translateY(-4px);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        0 4px 8px rgba(0,0,0,.4),
+        0 10px 20px rgba(0,0,0,.28),
+        0 22px 44px rgba(0,0,0,.16),
+        0 0 24px rgba(10,67,255,.18);
+    }
     .trust-num   { font-family:var(--serif); font-size:27px; font-weight:500; color:#FFFFFF; }
-    .trust-label { font-size:12px; color:rgba(255,255,255,.6); margin-top:3px; }
+    .trust-label { font-size:12px; color:rgba(255,255,255,.6); margin-top:4px; }
 
     /* ── SECTION WRAPPER ── */
     .sw { padding:88px 48px; }
@@ -730,7 +749,7 @@
       .hero { padding:48px 20px 56px; }
       .trust-bar { padding:24px 20px; }
       .trust-inner { justify-content:center; }
-      .trust-item { border-right:none; flex:0 0 calc(50% - 12px); }
+      .trust-item { flex:0 0 calc(50% - 8px); transform:none !important; }
       .sw { padding:56px 20px; }
       .services-grid { grid-template-columns:1fr; gap:12px; }
       .svc-card { height:auto; perspective:none; }
