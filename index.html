@@ -1198,6 +1198,11 @@
       transform: perspective(800px) translateY(0) rotateX(0deg);
     }
 
+    .mag-card:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+    }
+
     /* ── Bottom CTA strip ── */
     .services-cta {
       margin-top: 56px;
@@ -2112,6 +2117,7 @@
   if (noMotion) {
     cards.forEach(c => c.classList.add('revealed'));
   } else {
+    let revealedCount = 0;
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -2120,6 +2126,7 @@
             const idx  = parseInt(card.dataset.index, 10) || 0;
             setTimeout(() => card.classList.add('revealed'), idx * 90);
             revealObserver.unobserve(card);
+            if (++revealedCount === cards.length) revealObserver.disconnect();
           }
         });
       },
@@ -2128,23 +2135,29 @@
     cards.forEach(c => revealObserver.observe(c));
   }
 
-  /* 2. Magnetic 3D tilt */
+  /* 2. Magnetic 3D tilt — rAF-throttled mousemove */
   if (!noMotion) {
     cards.forEach(card => {
+      let rafPending = false;
       card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const cx   = rect.left + rect.width  / 2;
-        const cy   = rect.top  + rect.height / 2;
-        const dx = (e.clientX - cx) / (rect.width  / 2);
-        const dy = (e.clientY - cy) / (rect.height / 2);
-        const rotX = -dy * 8;
-        const rotY =  dx * 8;
-        card.style.transform =
-          `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(12px)`;
-        const pctX = ((e.clientX - rect.left) / rect.width)  * 100;
-        const pctY = ((e.clientY - rect.top)  / rect.height) * 100;
-        card.style.setProperty('--mouse-x', `${pctX}%`);
-        card.style.setProperty('--mouse-y', `${pctY}%`);
+        if (rafPending) return;
+        rafPending = true;
+        requestAnimationFrame(() => {
+          rafPending = false;
+          const rect = card.getBoundingClientRect();
+          const cx   = rect.left + rect.width  / 2;
+          const cy   = rect.top  + rect.height / 2;
+          const dx = (e.clientX - cx) / (rect.width  / 2);
+          const dy = (e.clientY - cy) / (rect.height / 2);
+          const rotX = -dy * 8;
+          const rotY =  dx * 8;
+          card.style.transform =
+            `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(12px)`;
+          const pctX = ((e.clientX - rect.left) / rect.width)  * 100;
+          const pctY = ((e.clientY - rect.top)  / rect.height) * 100;
+          card.style.setProperty('--mouse-x', `${pctX}%`);
+          card.style.setProperty('--mouse-y', `${pctY}%`);
+        });
       });
 
       card.addEventListener('mouseleave', () => {
