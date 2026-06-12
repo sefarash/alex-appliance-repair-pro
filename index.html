@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -787,540 +786,6 @@
       .footer-bottom { flex-direction:column; text-align:center; }
       .cta-wrap { padding:56px 20px; }
     }
-    /* ── X-RAY HERO: new CSS variables ── */
-    :root {
-      --navy:       #07111f;
-      --navy-mid:   #0d1f35;
-      --navy-edge:  #122540;
-      --blue-arc:   #1a6cf6;
-      --blue-glow:  #38a3ff;
-      --blue-beam:  #56c0ff;
-      --cyan-scan:  #00e5ff;
-      --fault-red:  #ff4757;
-      --ok-green:   #2ecc71;
-      --warn-amber: #f39c12;
-      --text-white: #f0f6ff;
-      --text-muted: #6b8aaa;
-      --text-dim:   #3a5470;
-      --mono:       'JetBrains Mono', monospace;
-      --sans-xray:  'Inter', system-ui, sans-serif;
-    }
-
-    /* ── X-RAY HERO SECTION ── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 0;
-      overflow: hidden;
-      background: var(--navy);
-      padding: 0;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(26,108,246,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(26,108,246,0.04) 1px, transparent 1px);
-      background-size: 48px 48px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: -200px;
-      right: -100px;
-      width: 700px;
-      height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(26,108,246,0.09) 0%, transparent 65%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 2;
-      padding: 80px 56px 80px 72px;
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--blue-glow);
-      border: 1px solid rgba(26,108,246,0.35);
-      padding: 6px 14px;
-      border-radius: 999px;
-      width: fit-content;
-      letter-spacing: 0.06em;
-    }
-
-    .badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--blue-glow);
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.4; transform: scale(0.7); }
-    }
-
-    .hero-headline {
-      font-size: clamp(36px, 4vw, 56px);
-      font-weight: 600;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--text-white);
-      font-family: var(--sans-xray);
-    }
-
-    .hero-headline em {
-      font-style: normal;
-      color: var(--blue-glow);
-    }
-
-    .hero-sub {
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--text-muted);
-      max-width: 420px;
-      font-family: var(--sans-xray);
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      padding-top: 4px;
-    }
-
-    /* Scoped to hero so they don't override nav/CTA buttons elsewhere */
-    .hero .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--blue-arc);
-      color: #fff;
-      font-family: var(--sans-xray);
-      font-size: 15px;
-      font-weight: 500;
-      padding: 14px 28px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .hero .btn-primary:hover { background: var(--blue-glow); transform: translateY(-1px); }
-
-    .hero .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: var(--text-muted);
-      font-family: var(--sans-xray);
-      font-size: 15px;
-      font-weight: 500;
-      padding: 14px 24px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
-      cursor: pointer;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .hero .btn-secondary:hover { border-color: rgba(255,255,255,0.25); color: var(--text-white); }
-
-    .trust-strip {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      padding-top: 8px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    /* Scoped to hero-text to avoid affecting the trust bar below */
-    .hero-text .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 13px;
-      color: var(--text-muted);
-      font-family: var(--sans-xray);
-    }
-
-    .hero-text .trust-icon {
-      width: 18px;
-      height: 18px;
-      color: var(--blue-glow);
-      flex-shrink: 0;
-    }
-
-    /* ── RIGHT: X-RAY SCANNER ── */
-    .xray-col {
-      position: relative;
-      z-index: 2;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 72px 60px 20px;
-    }
-
-    .xray-stage {
-      position: relative;
-      width: 380px;
-      height: 440px;
-      cursor: crosshair;
-      user-select: none;
-      flex-shrink: 0;
-    }
-
-    .appliance-body {
-      position: absolute;
-      inset: 0;
-      border: 1.5px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      background: rgba(255,255,255,0.025);
-      overflow: hidden;
-    }
-
-    .appliance-door {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 210px;
-      height: 210px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(255,255,255,0.08);
-    }
-
-    .appliance-drum {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .appliance-chip {
-      position: absolute;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--text-dim);
-      letter-spacing: 0.12em;
-      white-space: nowrap;
-    }
-
-    .control-strip {
-      position: absolute;
-      top: 18px;
-      left: 20px;
-      right: 20px;
-      height: 28px;
-      border-radius: 4px;
-      border: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      align-items: center;
-      padding: 0 10px;
-      gap: 8px;
-    }
-
-    .ctrl-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.12);
-    }
-
-    .scan-beam {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s;
-      z-index: 8;
-    }
-
-    .xray-lens {
-      position: absolute;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      pointer-events: none;
-      opacity: 0;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.25s;
-      z-index: 6;
-    }
-
-    .xray-lens-ring {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 1.5px solid var(--cyan-scan);
-      box-shadow: 0 0 18px rgba(0,229,255,0.25), inset 0 0 40px rgba(0,229,255,0.06);
-    }
-
-    .xray-lens-cross-h {
-      position: absolute;
-      top: 50%;
-      left: 8px;
-      right: 8px;
-      height: 1px;
-      background: rgba(0,229,255,0.2);
-      transform: translateY(-50%);
-    }
-
-    .xray-lens-cross-v {
-      position: absolute;
-      left: 50%;
-      top: 8px;
-      bottom: 8px;
-      width: 1px;
-      background: rgba(0,229,255,0.2);
-      transform: translateX(-50%);
-    }
-
-    .part {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      cursor: pointer;
-      z-index: 10;
-      opacity: 0;
-      transition: opacity 0.3s, transform 0.2s;
-    }
-
-    .part.fault   { background: var(--fault-red);  box-shadow: 0 0 10px rgba(255,71,87,0.6); }
-    .part.ok      { background: var(--ok-green);   box-shadow: 0 0 10px rgba(46,204,113,0.5); }
-    .part.warning { background: var(--warn-amber); box-shadow: 0 0 10px rgba(243,156,18,0.5); }
-
-    .part.visible { opacity: 1; }
-    .part:hover   { transform: translate(-50%,-50%) scale(1.7); }
-
-    .part::after {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      border: 1px solid currentColor;
-      opacity: 0.4;
-      animation: ring-pulse 2s ease-in-out infinite;
-    }
-
-    .part.fault::after   { color: var(--fault-red); }
-    .part.ok::after      { color: var(--ok-green); }
-    .part.warning::after { color: var(--warn-amber); }
-
-    @keyframes ring-pulse {
-      0%, 100% { transform: scale(1);   opacity: 0.4; }
-      50%       { transform: scale(1.8); opacity: 0; }
-    }
-
-    .xray-tooltip {
-      position: absolute;
-      pointer-events: none;
-      z-index: 20;
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 0.18s, transform 0.18s;
-      min-width: 160px;
-    }
-
-    .xray-tooltip.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .tooltip-inner {
-      background: rgba(7,17,31,0.96);
-      border: 1px solid rgba(0,229,255,0.25);
-      border-radius: 8px;
-      padding: 10px 14px;
-      backdrop-filter: blur(12px);
-    }
-
-    .tooltip-part-name {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--cyan-scan);
-      margin-bottom: 3px;
-    }
-
-    .tooltip-status {
-      font-size: 11px;
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-
-    .tooltip-status.fault   { color: var(--fault-red); }
-    .tooltip-status.ok      { color: var(--ok-green); }
-    .tooltip-status.warning { color: var(--warn-amber); }
-
-    .tooltip-desc {
-      font-size: 11px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .scan-canvas {
-      position: absolute;
-      inset: 0;
-      border-radius: 20px;
-      pointer-events: none;
-      z-index: 5;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    .scan-hud {
-      position: absolute;
-      top: -36px;
-      right: 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--text-dim);
-    }
-
-    .hud-indicator {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      transition: color 0.3s;
-    }
-
-    .hud-indicator.active { color: var(--cyan-scan); }
-
-    .hud-dot-sm {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: currentColor;
-    }
-
-    .scan-hint {
-      position: absolute;
-      bottom: -32px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--text-dim);
-      white-space: nowrap;
-      letter-spacing: 0.08em;
-      animation: blink-hint 3s ease-in-out infinite;
-    }
-
-    @keyframes blink-hint {
-      0%, 80%, 100% { opacity: 1; }
-      40%           { opacity: 0.3; }
-    }
-
-    .fault-strip {
-      position: absolute;
-      bottom: 80px;
-      left: 72px;
-      right: 72px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 0.5s;
-    }
-
-    .fault-strip.visible { opacity: 1; }
-
-    .fault-pill {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--mono);
-      font-size: 11px;
-      padding: 5px 12px;
-      border-radius: 999px;
-      border: 1px solid;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.4s, transform 0.4s;
-    }
-
-    .fault-pill.visible { opacity: 1; transform: translateY(0); }
-
-    .fault-pill.fault   { color: var(--fault-red);  border-color: rgba(255,71,87,0.3);   background: rgba(255,71,87,0.07); }
-    .fault-pill.ok      { color: var(--ok-green);   border-color: rgba(46,204,113,0.3);  background: rgba(46,204,113,0.07); }
-    .fault-pill.warning { color: var(--warn-amber); border-color: rgba(243,156,18,0.3);  background: rgba(243,156,18,0.07); }
-
-    .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
-
-    .col-divider {
-      position: absolute;
-      top: 10%;
-      bottom: 10%;
-      left: 50%;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(26,108,246,0.2) 30%, rgba(26,108,246,0.2) 70%, transparent);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-      .hero-text {
-        padding: 60px 28px 40px;
-        gap: 22px;
-      }
-      .xray-col {
-        height: 480px;
-        padding: 20px 28px 60px;
-      }
-      .xray-stage {
-        width: 300px;
-        height: 340px;
-      }
-      .col-divider { display: none; }
-      .fault-strip { left: 20px; right: 20px; bottom: 12px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .badge-dot, .part::after, .scan-hint { animation: none; }
-      .part, .xray-tooltip, .fault-pill, .fault-strip { transition: none; }
-    }
   </style>
 </head>
 <body>
@@ -1372,123 +837,89 @@
 
 <!-- HERO -->
 <section class="hero" id="hero-section" aria-label="Hero">
+  <div class="hero-slides" id="hero-slides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1632923565835-6582b54f2105?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1562941995-17dc31eaaf6d?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1775210727386-4c798dfae209?w=1600&q=80')"></div>
+  </div>
+  <div class="hero-overlay"></div>
 
-  <div class="col-divider"></div>
+  <!-- decorative 3D icons -->
+  <div class="hero-deco" aria-hidden="true">
+    <!-- large wrench top-left -->
+    <svg class="deco-wrench-lg" viewBox="0 0 24 24">
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+    </svg>
+    <!-- large gear top-right -->
+    <svg class="deco-gear-lg" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+    <!-- small gear bottom-left -->
+    <svg class="deco-gear-sm" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+    <!-- small wrench bottom-right -->
+    <svg class="deco-wrench-sm" viewBox="0 0 24 24">
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+    </svg>
+    <!-- mid gear left edge -->
+    <svg class="deco-gear-mid" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+  </div>
 
-  <!-- LEFT: headline, CTA -->
-  <div class="hero-text">
-
-    <div class="badge">
-      <span class="badge-dot"></span>
-      LIVE DIAGNOSTIC SCANNER
-    </div>
-
-    <h1 class="hero-headline">
-      We find<br>
-      what's <em>broken.</em><br>
-      We fix it fast.
-    </h1>
-
-    <p class="hero-sub">
-      Expert appliance repair across Houston — washing machines,
-      refrigerators, ovens, and more. Same-day service, 90-day warranty.
-      Move your cursor over the appliance to scan it.
-    </p>
-
-    <div class="hero-ctas">
-      <a href="#book" class="btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Book a repair
-      </a>
-      <a href="tel:+18329794383" class="btn-secondary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-        (832) 979-4383
-      </a>
-    </div>
-
-    <div class="trust-strip">
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        No fix, no fee
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge fade-in">
+        <div class="hero-badge-dot"></div>
+        Same-day service available
       </div>
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        Same-day service
+
+      <h1 class="fade-up d1">
+        Your home,<br><em>working again.</em>
+      </h1>
+
+      <p class="hero-sub fade-up d2">
+        Expert appliance repair for washing machines, refrigerators, ovens, and more — by technicians you can actually trust.
+      </p>
+
+      <div class="hero-actions fade-up d3">
+        <a href="#book" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 1v3M11 1v3M2 7h12"/>
+          </svg>
+          Book a repair today
+        </a>
+        <a href="tel:+18329794383" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 2.5C2 2.5 2.8 1 3.9 1c.4 0 .75.4 1.1 1.1L5.8 3.4c.4.75 0 1.1-.4 1.5-.35.35-.7.7-.35 1.4C5.4 7.1 6.5 8.2 7.25 8.55c.75.35 1.05 0 1.4-.35s.75-.75 1.5-.35l1.9.75c.75.35 1.1.7 1.1 1.1 0 1.1-1.1 1.9-1.1 1.9C5.25 13.5-1.5 5.25 2 2.5z"/>
+          </svg>
+          Call us now
+        </a>
       </div>
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Licensed &amp; insured
+
+      <div class="hero-trust fade-up d4">
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5.5,11 12,3"/></svg>
+          No fix, no fee
+        </div>
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5.5,11 12,3"/></svg>
+          90-day warranty
+        </div>
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5.5,11 12,3"/></svg>
+          Licensed &amp; insured
+        </div>
       </div>
     </div>
 
   </div>
-
-  <!-- RIGHT: X-RAY SCANNER -->
-  <div class="xray-col">
-    <div class="xray-stage" id="xrayStage" role="img" aria-label="Interactive appliance X-ray scanner — move cursor to reveal internal components">
-
-      <!-- Scan status HUD -->
-      <div class="scan-hud">
-        <div class="hud-indicator" id="hudStatus">
-          <div class="hud-dot-sm"></div>
-          <span id="hudText">MOVE CURSOR TO SCAN</span>
-        </div>
-      </div>
-
-      <!-- Appliance silhouette -->
-      <div class="appliance-body">
-        <div class="control-strip">
-          <div class="ctrl-dot"></div>
-          <div class="ctrl-dot"></div>
-          <div class="ctrl-dot"></div>
-        </div>
-        <div class="appliance-door"></div>
-        <div class="appliance-drum"></div>
-        <div class="appliance-chip">FRONT-LOAD WASHER · MODEL WF45R</div>
-      </div>
-
-      <!-- Scan beam canvas -->
-      <canvas class="scan-canvas" id="scanCanvas"></canvas>
-
-      <!-- X-ray lens circle that follows cursor -->
-      <div class="xray-lens" id="xrayLens">
-        <div class="xray-lens-ring"></div>
-        <div class="xray-lens-cross-h"></div>
-        <div class="xray-lens-cross-v"></div>
-      </div>
-
-      <!-- Component dots -->
-      <div class="part fault"   id="p0" style="top:36%; left:50%"  data-part="Motor bearing"     data-status="fault"   data-desc="High-friction wear detected. Likely cause of grinding noise during spin cycle."></div>
-      <div class="part fault"   id="p1" style="top:68%; left:28%"  data-part="Drain pump"        data-status="fault"   data-desc="Blockage detected. Explains slow drainage and error code E3."></div>
-      <div class="part ok"      id="p2" style="top:22%; left:68%"  data-part="Control board"     data-status="ok"      data-desc="All circuits nominal. Firmware up to date."></div>
-      <div class="part warning" id="p3" style="top:72%; left:70%"  data-part="Door seal"         data-status="warning" data-desc="Minor micro-cracks forming. Recommend replacement within 60 days."></div>
-      <div class="part ok"      id="p4" style="top:50%; left:82%"  data-part="Water inlet valve" data-status="ok"      data-desc="Flow rate normal. No mineral buildup detected."></div>
-      <div class="part fault"   id="p5" style="top:82%; left:52%"  data-part="Suspension rod"   data-status="fault"   data-desc="Two of four rods have lost damping capacity. Causing excessive vibration."></div>
-
-      <!-- Floating tooltip -->
-      <div class="xray-tooltip" id="xrayTooltip">
-        <div class="tooltip-inner">
-          <div class="tooltip-part-name" id="ttPartName">—</div>
-          <div class="tooltip-status" id="ttStatus">—</div>
-          <div class="tooltip-desc"    id="ttDesc">—</div>
-        </div>
-      </div>
-
-      <!-- Scan hint -->
-      <div class="scan-hint" id="scanHint">▸ move cursor to run diagnostic</div>
-
-    </div><!-- /xray-stage -->
-
-    <!-- Fault summary pills — appear after scanning -->
-    <div class="fault-strip" id="faultStrip">
-      <div class="fault-pill fault"   id="fp0"><div class="pill-dot"></div>Motor bearing — FAULT</div>
-      <div class="fault-pill fault"   id="fp1"><div class="pill-dot"></div>Drain pump — BLOCKED</div>
-      <div class="fault-pill warning" id="fp2"><div class="pill-dot"></div>Door seal — WEAR</div>
-      <div class="fault-pill fault"   id="fp3"><div class="pill-dot"></div>Suspension — FAULT</div>
-    </div>
-
-  </div><!-- /xray-col -->
-
 </section>
 
 <!-- TRUST BAR -->
@@ -2162,246 +1593,6 @@
       });
     });
   });
-</script>
-
-<script>
-(function() {
-  'use strict';
-
-  const stage       = document.getElementById('xrayStage');
-  const lens        = document.getElementById('xrayLens');
-  const canvas      = document.getElementById('scanCanvas');
-  const ctx         = canvas.getContext('2d');
-  const tooltip     = document.getElementById('xrayTooltip');
-  const ttPartName  = document.getElementById('ttPartName');
-  const ttStatus    = document.getElementById('ttStatus');
-  const ttDesc      = document.getElementById('ttDesc');
-  const hudStatus   = document.getElementById('hudStatus');
-  const hudText     = document.getElementById('hudText');
-  const scanHint    = document.getElementById('scanHint');
-  const faultStrip  = document.getElementById('faultStrip');
-
-  if (!stage) return;
-
-  function resizeCanvas() {
-    canvas.width  = stage.offsetWidth;
-    canvas.height = stage.offsetHeight;
-  }
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  const parts = Array.from(document.querySelectorAll('.part'));
-
-  let mouseX = -1, mouseY = -1;
-  let scanning = false;
-  let scanned = false;
-  let revealedParts = new Set();
-  let activePartEl = null;
-  const LENS_R = 80;
-  let animFrame;
-  let scanLineX = -1;
-  let beamOpacity = 0;
-
-  stage.addEventListener('mousemove', onMove);
-  stage.addEventListener('mouseleave', onLeave);
-  stage.addEventListener('touchmove', e => {
-    e.preventDefault();
-    const t = e.touches[0];
-    const r = stage.getBoundingClientRect();
-    handleMove(t.clientX - r.left, t.clientY - r.top);
-  }, { passive: false });
-  stage.addEventListener('touchend', onLeave);
-
-  function onMove(e) {
-    const r = stage.getBoundingClientRect();
-    handleMove(e.clientX - r.left, e.clientY - r.top);
-  }
-
-  function handleMove(x, y) {
-    mouseX = x;
-    mouseY = y;
-    if (!scanning) startScan();
-    updateLens(x, y);
-    updateBeam(x);
-    checkPartsProximity(x, y);
-  }
-
-  function onLeave() {
-    mouseX = -1;
-    mouseY = -1;
-    lens.style.opacity = '0';
-    canvas.style.opacity = '0';
-    beamOpacity = 0;
-    hideTooltip();
-    hudStatus.classList.remove('active');
-    hudText.textContent = 'MOVE CURSOR TO SCAN';
-  }
-
-  function startScan() {
-    scanning = true;
-    scanHint.style.opacity = '0';
-    canvas.style.opacity   = '1';
-    hudStatus.classList.add('active');
-    hudText.textContent = 'SCANNING…';
-    if (!animFrame) animFrame = requestAnimationFrame(drawLoop);
-  }
-
-  function updateLens(x, y) {
-    lens.style.left    = x + 'px';
-    lens.style.top     = y + 'px';
-    lens.style.opacity = '1';
-  }
-
-  function updateBeam(x) {
-    scanLineX = x;
-    beamOpacity = Math.min(1, beamOpacity + 0.08);
-  }
-
-  function drawLoop() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    if (scanLineX > 0 && beamOpacity > 0) {
-      const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      grad.addColorStop(0,   'rgba(0,229,255,0)');
-      grad.addColorStop(0.2, `rgba(0,229,255,${0.45 * beamOpacity})`);
-      grad.addColorStop(0.5, `rgba(0,229,255,${0.55 * beamOpacity})`);
-      grad.addColorStop(0.8, `rgba(0,229,255,${0.45 * beamOpacity})`);
-      grad.addColorStop(1,   'rgba(0,229,255,0)');
-      ctx.fillStyle = grad;
-      ctx.fillRect(scanLineX - 1, 0, 2, canvas.height);
-
-      const glow = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      glow.addColorStop(0,   'rgba(0,229,255,0)');
-      glow.addColorStop(0.5, `rgba(0,229,255,${0.04 * beamOpacity})`);
-      glow.addColorStop(1,   'rgba(0,229,255,0)');
-      ctx.fillStyle = glow;
-      ctx.fillRect(scanLineX - 20, 0, 40, canvas.height);
-
-      beamOpacity *= 0.93;
-    }
-
-    if (mouseX > 0) {
-      parts.forEach(part => {
-        if (!revealedParts.has(part)) return;
-        const r  = stage.getBoundingClientRect();
-        const pr = part.getBoundingClientRect();
-        const px = pr.left - r.left + pr.width  / 2;
-        const py = pr.top  - r.top  + pr.height / 2;
-        const dx = px - mouseX;
-        const dy = py - mouseY;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < LENS_R * 1.5) {
-          const alpha = Math.max(0, 1 - dist / (LENS_R * 1.5));
-          const color = part.classList.contains('fault')   ? `rgba(255,71,87,${alpha * 0.35})`   :
-                        part.classList.contains('ok')      ? `rgba(46,204,113,${alpha * 0.3})`   :
-                                                             `rgba(243,156,18,${alpha * 0.35})`;
-          ctx.beginPath();
-          ctx.moveTo(mouseX, mouseY);
-          ctx.lineTo(px, py);
-          ctx.strokeStyle = color;
-          ctx.lineWidth = 1;
-          ctx.setLineDash([3, 5]);
-          ctx.stroke();
-          ctx.setLineDash([]);
-        }
-      });
-    }
-
-    animFrame = requestAnimationFrame(drawLoop);
-  }
-
-  function checkPartsProximity(mx, my) {
-    let nearest = null;
-    let nearestDist = Infinity;
-
-    parts.forEach(part => {
-      const r  = stage.getBoundingClientRect();
-      const pr = part.getBoundingClientRect();
-      const px = pr.left - r.left + pr.width  / 2;
-      const py = pr.top  - r.top  + pr.height / 2;
-      const dist = Math.sqrt((px - mx)**2 + (py - my)**2);
-
-      if (dist < LENS_R) {
-        if (!revealedParts.has(part)) {
-          revealedParts.add(part);
-          part.classList.add('visible');
-          maybeShowFaultStrip();
-        }
-        if (dist < nearestDist) {
-          nearest = part;
-          nearestDist = dist;
-        }
-      }
-    });
-
-    if (nearest && nearestDist < LENS_R * 0.75) {
-      showTooltip(nearest, mx, my);
-      activePartEl = nearest;
-      const statusMap = { fault: 'FAULT DETECTED', ok: 'NOMINAL', warning: 'WEAR DETECTED' };
-      hudText.textContent = statusMap[nearest.dataset.status] || 'SCANNING…';
-    } else {
-      if (activePartEl) hideTooltip();
-      activePartEl = null;
-      hudText.textContent = 'SCANNING…';
-    }
-  }
-
-  function showTooltip(partEl, mx, my) {
-    ttPartName.textContent = partEl.dataset.part;
-    ttDesc.textContent     = partEl.dataset.desc;
-
-    const statusLabels = { fault: 'FAULT DETECTED', ok: 'NOMINAL — no action needed', warning: 'WEAR DETECTED — monitor closely' };
-    ttStatus.textContent  = statusLabels[partEl.dataset.status] || '';
-    ttStatus.className    = 'tooltip-status ' + partEl.dataset.status;
-
-    const sw = stage.offsetWidth;
-    const sh = stage.offsetHeight;
-    let tx = mx + 20;
-    let ty = my - 60;
-    if (tx + 180 > sw) tx = mx - 190;
-    if (ty < 0)        ty = my + 20;
-    if (ty + 110 > sh) ty = sh - 120;
-
-    tooltip.style.left = tx + 'px';
-    tooltip.style.top  = ty + 'px';
-    tooltip.classList.add('visible');
-  }
-
-  function hideTooltip() {
-    tooltip.classList.remove('visible');
-  }
-
-  function maybeShowFaultStrip() {
-    if (revealedParts.size < 3 && !scanned) return;
-    scanned = true;
-    faultStrip.classList.add('visible');
-    const pills = faultStrip.querySelectorAll('.fault-pill');
-    pills.forEach((pill, i) => {
-      setTimeout(() => pill.classList.add('visible'), i * 120 + 200);
-    });
-  }
-
-  const isTouch = window.matchMedia('(hover: none)').matches;
-  if (isTouch) {
-    setTimeout(() => {
-      parts.forEach(p => { p.classList.add('visible'); revealedParts.add(p); });
-      maybeShowFaultStrip();
-      scanHint.textContent = '▸ tap a component to inspect';
-    }, 1800);
-
-    parts.forEach(part => {
-      part.addEventListener('click', () => {
-        const r  = stage.getBoundingClientRect();
-        const pr = part.getBoundingClientRect();
-        const px = pr.left - r.left + pr.width / 2;
-        const py = pr.top  - r.top  + pr.height / 2;
-        showTooltip(part, px, py);
-        setTimeout(hideTooltip, 3000);
-      });
-    });
-  }
-
-})();
 </script>
 </body>
 </html>
