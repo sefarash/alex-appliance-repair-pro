@@ -1097,6 +1097,74 @@
       z-index: 3;
     }
 
+    /* ── Full-width "catch-all" card ── */
+    .mag-card--wide {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: center;
+      gap: 28px;
+      padding: 28px 32px;
+      border-style: dashed;
+    }
+
+    .mag-card--wide .card-content {
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+      height: auto;
+    }
+
+    .mag-card--wide .card-icon-wrap {
+      margin-bottom: 0;
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    .mag-card--wide .card-text {
+      flex: 1;
+    }
+
+    .mag-card--wide .card-name {
+      margin-bottom: 4px;
+    }
+
+    .mag-card--wide .card-symptom {
+      margin-bottom: 0;
+    }
+
+    .mag-card--wide .card-footer {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+      margin-left: auto;
+      flex-shrink: 0;
+      gap: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .mag-card--wide {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 36px 28px 32px;
+      }
+      .mag-card--wide .card-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        height: 100%;
+      }
+      .mag-card--wide .card-icon-wrap { margin-bottom: 24px; }
+      .mag-card--wide .card-symptom   { margin-bottom: 24px; }
+      .mag-card--wide .card-footer {
+        border-top: 1px solid var(--mag-border);
+        padding-top: 18px;
+        margin-top: auto;
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+
     @keyframes ripple-out {
       from { transform: translate(-50%,-50%) scale(0); opacity: 0.25; }
       to   { transform: translate(-50%,-50%) scale(3); opacity: 0; }
@@ -1476,6 +1544,22 @@
           <div class="card-symptom">Not heating, sparking inside, turntable stuck, display dead, or door latch broken.</div>
           <div class="card-footer">
             <span class="card-tag">NEXT DAY</span>
+            <div class="card-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          </div>
+        </div>
+      </a>
+
+      <a class="mag-card mag-card--wide" href="tel:+18329794383" data-index="6" aria-label="Call us about other appliance repairs">
+        <div class="card-content">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <div class="card-text">
+            <div class="card-name">Something else?</div>
+            <div class="card-symptom">Freezer, wine cooler, garbage disposal, or any appliance not listed — call us and we'll let you know if we can help.</div>
+          </div>
+          <div class="card-footer">
+            <span class="card-tag">CALL US</span>
             <div class="card-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
           </div>
         </div>
