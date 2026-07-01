@@ -129,21 +129,12 @@
     nav.scrolled { box-shadow:0 2px 20px rgba(10,27,75,.09); }
 
     .nav-logo {
-      display:flex; align-items:center; gap:11px;
+      display:flex; align-items:center;
       text-decoration:none; flex-shrink:0;
     }
     .nav-logo-img {
-      width:48px; height:48px; border-radius:6px;
+      width:160px; height:auto;
       object-fit:contain;
-    }
-    .nav-logo-copy {
-      font-family:var(--serif); font-size:16px; font-weight:600;
-      color:var(--espresso); line-height:1.2;
-    }
-    .nav-logo-copy span {
-      display:block; font-family:var(--sans); font-size:10px;
-      font-weight:400; color:var(--rust-lt);
-      letter-spacing:.09em; text-transform:uppercase;
     }
 
     .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
@@ -712,10 +703,10 @@
       padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.1);
     }
     .footer-logo-img {
-      width:80px; height:80px; border-radius:8px;
+      width:160px; height:auto;
       object-fit:contain; margin-bottom:14px; display:block;
+      background:#fff; border-radius:10px; padding:8px;
     }
-    .footer-brand-name { font-family:var(--serif); font-size:15px; color:#FFFFFF; margin-bottom:6px; }
     .footer-brand-tag  { font-size:13px; color:rgba(255,255,255,.4); line-height:1.55; }
     .footer-col-title  {
       font-size:11px; font-weight:500; color:rgba(255,255,255,.45);
@@ -1363,11 +1354,7 @@
 <!-- NAV -->
 <nav id="main-nav">
   <a href="#" class="nav-logo" aria-label="Alex Appliance Repair Pro — home">
-    <img src="brand_assets/logo2.png" alt="" class="nav-logo-img" />
-    <div class="nav-logo-copy">
-      Alex Appliance Repair Pro
-      <span>Licensed &amp; Insured · Houston, TX</span>
-    </div>
+    <img src="brand_assets/logo2.png" alt="Alex Appliance Pro" class="nav-logo-img" />
   </a>
 
   <ul class="nav-links">
@@ -1923,9 +1910,8 @@
 <footer>
   <div class="footer-top">
     <div>
-      <img src="brand_assets/logo2.png" alt="Alex Appliance Repair Pro" class="footer-logo-img" />
-      <div class="footer-brand-name">Alex Appliance Repair Pro</div>
-      <div class="footer-brand-tag">Built on trust, driven by expertise.<br>Houston, TX · Licensed &amp; Insured</div>
+      <img src="brand_assets/logo2.png" alt="Alex Appliance Pro" class="footer-logo-img" />
+      <div class="footer-brand-tag">Houston, TX · Licensed &amp; Insured</div>
     </div>
     <div>
       <div class="footer-col-title">Services</div>
