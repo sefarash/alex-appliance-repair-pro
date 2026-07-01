@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appliance Repair in Sugar Land, TX | Same-Day Service | Alex Appliance Repair Pro</title>
+  <meta name="description" content="Expert appliance repair in Sugar Land, TX. Same-day service, 90-day warranty, no fix no fee. Serving First Colony, Riverstone, Telfair and more. Call (832) 979-4383." />
+  <link rel="canonical" href="https://alexappliancepro.com/appliance-repair-sugar-land-tx/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #F0F4FF;
+      color: #111827;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --amber:     #0A43FF;
+      --amber-dk:  #0835CC;
+      --amber-lt:  #E0E8FF;
+      --cream:     #F0F4FF;
+      --cream-dk:  #D8E2FF;
+      --walnut:    #0A1B4B;
+      --espresso:  #111827;
+      --rust:      #334155;
+      --rust-lt:   #64748B;
+      --white:     #FFFFFF;
+      --border:    rgba(10,67,255,0.15);
+      --red:       #E10600;
+      --serif:     'Playfair Display', Georgia, serif;
+      --sans:      'DM Sans', sans-serif;
+      --mono:      'DM Mono', monospace;
+      --radius:    12px;
+      --radius-sm: 8px;
+    }
+
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+    @keyframes pulseDot { 0%,100% { opacity:1; } 50% { opacity:.35; } }
+    @keyframes kenBurns { from { transform:scale(1); } to { transform:scale(1.06); } }
+
+    @keyframes floatWrench {
+      0%   { transform:perspective(500px) rotateY(0deg)   rotateZ(-20deg) translateY(0px); }
+      30%  { transform:perspective(500px) rotateY(28deg)  rotateZ(-15deg) translateY(-14px); }
+      65%  { transform:perspective(500px) rotateY(-18deg) rotateZ(-24deg) translateY(7px); }
+      100% { transform:perspective(500px) rotateY(0deg)   rotateZ(-20deg) translateY(0px); }
+    }
+    @keyframes spinGear {
+      from { transform:perspective(500px) rotateY(0deg)   rotateZ(0deg); }
+      50%  { transform:perspective(500px) rotateY(-35deg) rotateZ(180deg); }
+      to   { transform:perspective(500px) rotateY(0deg)   rotateZ(360deg); }
+    }
+    @keyframes spinGearAlt {
+      from { transform:perspective(500px) rotateX(0deg)   rotateZ(0deg); }
+      50%  { transform:perspective(500px) rotateX(25deg)  rotateZ(-180deg); }
+      to   { transform:perspective(500px) rotateX(0deg)   rotateZ(-360deg); }
+    }
+    @keyframes floatWrenchSm {
+      0%   { transform:perspective(400px) rotateY(0deg)  rotateZ(12deg) translateY(0px); }
+      40%  { transform:perspective(400px) rotateY(20deg) rotateZ(18deg) translateY(-10px); }
+      80%  { transform:perspective(400px) rotateY(-12deg) rotateZ(8deg) translateY(5px); }
+      100% { transform:perspective(400px) rotateY(0deg)  rotateZ(12deg) translateY(0px); }
+    }
+
+    .fade-up { animation: fadeUp .7s ease both; }
+    .fade-in { animation: fadeIn .6s ease both; }
+    .d1 { animation-delay:.1s; } .d2 { animation-delay:.22s; }
+    .d3 { animation-delay:.38s; } .d4 { animation-delay:.54s; }
+
+    .reveal {
+      opacity:0; transform:translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      background: var(--amber); color:#fff; border:none;
+      padding:12px 24px; border-radius:var(--radius-sm);
+      font-family:var(--sans); font-size:14px; font-weight:500;
+      cursor:pointer; text-decoration:none;
+      display:inline-flex; align-items:center; gap:8px;
+      transition:background .2s,transform .15s;
+    }
+    .btn-primary:hover  { background:var(--amber-dk); }
+    .btn-primary:active { transform:scale(.97); }
+
+    .btn-secondary {
+      background:transparent; color:var(--rust);
+      border:1.5px solid var(--amber);
+      padding:11px 22px; border-radius:var(--radius-sm);
+      font-family:var(--sans); font-size:14px; font-weight:500;
+      cursor:pointer; text-decoration:none;
+      display:inline-flex; align-items:center; gap:8px;
+      transition:background .2s,transform .15s;
+    }
+    .btn-secondary:hover  { background:var(--amber-lt); }
+    .btn-secondary:active { transform:scale(.97); }
+
+    .btn-ghost {
+      background:rgba(255,255,255,.1); color:#FFFFFF;
+      border:1.5px solid rgba(255,255,255,.28);
+      padding:13px 26px; border-radius:var(--radius-sm);
+      font-family:var(--sans); font-size:15px; font-weight:500;
+      cursor:pointer; text-decoration:none;
+      display:inline-flex; align-items:center; gap:8px;
+      transition:background .2s,border-color .2s,transform .15s;
+    }
+    .btn-ghost:hover  { background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.45); }
+    .btn-ghost:active { transform:scale(.97); }
+
+    /* ── NAV ── */
+    nav {
+      position:sticky; top:0; z-index:200;
+      background:var(--white); border-bottom:1px solid var(--border);
+      height:68px; display:flex; align-items:center;
+      justify-content:space-between; padding:0 48px;
+      transition:box-shadow .3s;
+    }
+    nav.scrolled { box-shadow:0 2px 20px rgba(10,27,75,.09); }
+
+    .nav-logo {
+      display:flex; align-items:center; gap:11px;
+      text-decoration:none; flex-shrink:0;
+    }
+    .nav-logo-img {
+      width:48px; height:48px; border-radius:6px;
+      object-fit:contain;
+    }
+    .nav-logo-copy {
+      font-family:var(--serif); font-size:16px; font-weight:600;
+      color:var(--espresso); line-height:1.2;
+    }
+    .nav-logo-copy span {
+      display:block; font-family:var(--sans); font-size:10px;
+      font-weight:400; color:var(--rust-lt);
+      letter-spacing:.09em; text-transform:uppercase;
+    }
+
+    .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+    .nav-links a { font-size:14px; color:var(--rust); text-decoration:none; transition:color .2s; }
+    .nav-links a:hover { color:var(--amber); }
+
+    .nav-right { display:flex; align-items:center; gap:14px; flex-shrink:0; }
+    .nav-phone {
+      font-size:14px; font-weight:500; color:var(--rust);
+      text-decoration:none; display:flex; align-items:center; gap:7px;
+      transition:color .2s;
+    }
+    .nav-phone:hover { color:var(--amber); }
+
+    .nav-hamburger {
+      display:none; flex-direction:column; gap:5px;
+      background:none; border:none; cursor:pointer; padding:6px;
+    }
+    .nav-hamburger span {
+      display:block; width:22px; height:2px;
+      background:var(--espresso); border-radius:2px;
+      transition:transform .3s,opacity .3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity:0; }
+    .nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display:none; position:fixed;
+      top:68px; left:0; right:0;
+      background:var(--white); border-bottom:1px solid var(--border);
+      padding:16px 24px 28px; z-index:190;
+      box-shadow:0 8px 28px rgba(10,27,75,.1);
+    }
+    .mobile-menu.open { display:block; }
+    .mobile-menu ul { list-style:none; margin-bottom:18px; }
+    .mobile-menu ul a {
+      display:block; padding:12px 0;
+      font-size:16px; color:var(--rust); text-decoration:none;
+      border-bottom:1px solid var(--border); transition:color .2s;
+    }
+    .mobile-menu ul a:hover { color:var(--amber); }
+    .mobile-menu .btn-primary { width:100%; justify-content:center; font-size:15px; padding:13px; }
+
+    /* ── HERO ── */
+    .hero {
+      position:relative; overflow:hidden;
+      padding:100px 48px 96px;
+      min-height:600px; display:flex; align-items:center;
+    }
+
+    .hero-slides { position:absolute; inset:0; }
+    .hero-slide {
+      position:absolute; inset:0;
+      background-size:cover; background-position:center;
+      opacity:0; transition:opacity 1s ease;
+      transform:scale(1.06);
+    }
+    .hero-slide.active {
+      opacity:1;
+      animation:kenBurns 5s ease-out forwards;
+    }
+    .hero-overlay {
+      position:absolute; inset:0; z-index:1;
+      background:linear-gradient(to right, rgba(10,27,75,.78) 0%, rgba(10,27,75,.5) 100%);
+    }
+
+    .hero-deco {
+      position:absolute; inset:0; z-index:2;
+      pointer-events:none; overflow:hidden;
+    }
+    .hero-deco svg {
+      position:absolute; fill:none;
+      stroke:#7AABFF; stroke-linecap:round; stroke-linejoin:round;
+      filter:drop-shadow(0 0 6px rgba(100,160,255,0.4));
+    }
+    .deco-wrench-lg { width:96px; top:12%; left:6%; opacity:.18; stroke-width:1.4; animation:floatWrench 13s ease-in-out infinite; }
+    .deco-gear-lg   { width:114px; top:8%; right:7%; opacity:.16; stroke-width:1.1; animation:spinGear 22s linear infinite; }
+    .deco-gear-sm   { width:56px; bottom:16%; left:14%; opacity:.14; stroke-width:1.4; animation:spinGearAlt 16s linear infinite; }
+    .deco-wrench-sm { width:52px; bottom:20%; right:11%; opacity:.14; stroke-width:1.5; animation:floatWrenchSm 10s ease-in-out infinite; }
+    .deco-gear-mid  { width:72px; top:52%; left:3%; opacity:.12; stroke-width:1.1; animation:spinGear 28s linear infinite reverse; }
+
+    .hero-inner {
+      position:relative; z-index:3;
+      max-width:760px; margin:0 auto;
+      text-align:center;
+    }
+
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(255,255,255,.15); color:#FFFFFF;
+      font-size:13px; font-weight:500;
+      padding:6px 14px 6px 10px; border-radius:999px;
+      margin-bottom:22px;
+      border:1px solid rgba(255,255,255,.25);
+    }
+    .hero-badge-dot {
+      width:7px; height:7px; background:var(--amber);
+      border-radius:50%; animation:pulseDot 2s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      font-family:var(--serif);
+      font-size:clamp(52px,6vw,76px);
+      font-weight:500; line-height:1.09;
+      color:#FFFFFF; margin-bottom:22px;
+    }
+    .hero h1 em { font-style:italic; color:#E10600; }
+
+    .hero-sub {
+      font-size:19px; color:rgba(255,255,255,.85);
+      line-height:1.65; max-width:560px; margin:0 auto 36px;
+    }
+
+    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:32px; justify-content:center; }
+    .hero-actions .btn-primary  { font-size:17px; padding:16px 34px; }
+    .hero-actions .btn-secondary {
+      font-size:17px; padding:15px 30px;
+      color:#FFFFFF; border-color:rgba(255,255,255,.5);
+    }
+    .hero-actions .btn-secondary:hover { background:rgba(255,255,255,.15); }
+
+    .hero-trust { display:flex; gap:22px; flex-wrap:wrap; justify-content:center; }
+    .hero-trust-item {
+      display:flex; align-items:center; gap:7px;
+      font-size:14px; color:rgba(255,255,255,.75);
+    }
+    .hero-trust-item svg { stroke:var(--amber); flex-shrink:0; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background:var(--walnut); padding:40px 48px; }
+    .trust-inner {
+      max-width:1060px; margin:0 auto;
+      display:flex; justify-content:center;
+      flex-wrap:wrap; gap:14px;
+    }
+    .trust-item {
+      text-align:center; padding:22px 28px; flex:1; min-width:130px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.1);
+      border-top:1px solid rgba(255,255,255,.18);
+      border-radius:14px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 2px 4px rgba(0,0,0,.35), 0 6px 12px rgba(0,0,0,.22), 0 14px 28px rgba(0,0,0,.12);
+      transition:transform .35s cubic-bezier(.2,0,.2,1), box-shadow .35s ease;
+      transform-origin:center 65%;
+      cursor:default;
+    }
+    .trust-item:hover {
+      transform:perspective(600px) rotateX(5deg) translateY(-4px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 4px 8px rgba(0,0,0,.4), 0 10px 20px rgba(0,0,0,.28), 0 22px 44px rgba(0,0,0,.16), 0 0 24px rgba(10,67,255,.18);
+    }
+    .trust-num   { font-family:var(--serif); font-size:27px; font-weight:500; color:#FFFFFF; }
+    .trust-label { font-size:12px; color:rgba(255,255,255,.6); margin-top:4px; }
+
+    /* ── SECTION WRAPPER ── */
+    .sw { padding:88px 48px; }
+    .sw.on-cream { background:var(--cream); }
+    .sw.on-white { background:var(--white); }
+    .sw.on-bg    { background:#F0F4FF; }
+
+    .si { max-width:1160px; margin:0 auto; }
+
+    .eyebrow {
+      font-family:var(--mono); font-size:13px; font-weight:500;
+      color:var(--amber); text-transform:uppercase;
+      letter-spacing:.14em; margin-bottom:12px;
+      text-align:center;
+    }
+    .sec-title {
+      font-family:var(--serif);
+      font-size:clamp(34px,4vw,52px);
+      font-weight:500; color:var(--espresso);
+      margin-bottom:16px; line-height:1.15;
+      text-align:center;
+    }
+    .sec-sub {
+      font-size:18px; color:var(--rust);
+      max-width:580px; line-height:1.65; margin:0 auto 52px;
+      text-align:center;
+    }
+
+    /* ── BRANDS ── */
+    .brands-section { background:var(--white); padding:56px 0 52px; overflow:hidden; }
+    .brands-heading { text-align:center; margin-bottom:36px; padding:0 48px; }
+    .brands-track-wrap { overflow:hidden; position:relative; }
+    .brands-track-wrap::before,
+    .brands-track-wrap::after {
+      content:''; position:absolute; top:0; bottom:0; width:120px; z-index:2; pointer-events:none;
+    }
+    .brands-track-wrap::before { left:0; background:linear-gradient(to right, var(--white), transparent); }
+    .brands-track-wrap::after  { right:0; background:linear-gradient(to left,  var(--white), transparent); }
+    .brands-track {
+      display:flex; align-items:center; gap:56px;
+      width:max-content;
+      animation:brandScroll 28s linear infinite;
+    }
+    .brands-track:hover { animation-play-state:paused; }
+    @keyframes brandScroll {
+      from { transform:translateX(0); }
+      to   { transform:translateX(-50%); }
+    }
+    .brand-logo { height:38px; width:auto; max-width:130px; object-fit:contain; flex-shrink:0; cursor:default; user-select:none; }
+    .brand-dot  { width:5px; height:5px; border-radius:50%; background:#D8E2EE; flex-shrink:0; }
+
+    /* ── SERVICES ── */
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+
+    .svc-card { perspective:1000px; height:210px; cursor:pointer; }
+    .svc-card-inner { position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform .65s cubic-bezier(.4,0,.2,1); }
+    .svc-card:hover .svc-card-inner { transform:rotateY(180deg); }
+
+    .svc-card-front, .svc-card-back { position:absolute; inset:0; border-radius:var(--radius); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+    .svc-card-front { background:var(--white); border:1px solid var(--border); padding:26px; }
+    .svc-card-back { background:var(--walnut); transform:rotateY(180deg); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:28px; text-align:center; gap:14px; }
+    .svc-back-icon { width:48px; height:48px; background:rgba(255,255,255,.08); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    .svc-back-icon svg { stroke:#7AABFF; }
+    .svc-back-label { font-family:var(--serif); font-size:17px; font-weight:500; color:#FFFFFF; line-height:1.3; }
+    .svc-back-sub { font-size:12px; color:rgba(255,255,255,.55); margin-top:-8px; }
+    .svc-back-btn { background:var(--amber); color:#fff; padding:10px 22px; border-radius:var(--radius-sm); font-family:var(--sans); font-size:13px; font-weight:500; text-decoration:none; transition:background .2s; display:inline-flex; align-items:center; gap:6px; }
+    .svc-back-btn:hover { background:var(--amber-dk); }
+
+    .svc-icon { width:46px; height:46px; background:var(--cream); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:17px; }
+    .svc-icon svg { stroke:var(--amber); }
+    .svc-name { font-size:15px; font-weight:500; color:var(--espresso); margin-bottom:7px; }
+    .svc-desc { font-size:13px; color:var(--rust); line-height:1.6; margin-bottom:14px; }
+    .svc-link { font-size:13px; font-weight:500; color:var(--amber); text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
+    .svc-link:hover { color:var(--amber-dk); }
+
+    /* ── HOW IT WORKS ── */
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:0; position:relative; perspective:1200px; }
+    .steps-progress-wrap { position:absolute; top:21px; left:calc(16.67% + 21px); right:calc(16.67% + 21px); height:2px; background:var(--cream-dk); overflow:hidden; z-index:0; }
+    .steps-progress-fill { height:100%; width:100%; background:var(--amber); transform:scaleX(0); transform-origin:left center; }
+    .step { padding:0 28px; will-change:transform,opacity; }
+    .step-num { width:42px; height:42px; border-radius:50%; background:var(--amber); color:#fff; font-family:var(--serif); font-size:18px; font-weight:500; display:flex; align-items:center; justify-content:center; margin-bottom:20px; position:relative; z-index:1; }
+    .step-title { font-size:16px; font-weight:500; color:var(--espresso); margin-bottom:8px; }
+    .step-desc  { font-size:14px; color:var(--rust); line-height:1.65; }
+
+    /* ── WHY US ── */
+    .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .why-card { background:var(--cream); border:1px solid var(--cream-dk); border-radius:var(--radius); padding:24px; }
+    .why-icon { width:44px; height:44px; background:var(--white); border:1px solid var(--border); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+    .why-icon svg { stroke:var(--amber); }
+    .why-title { font-size:14px; font-weight:500; color:var(--espresso); margin-bottom:6px; }
+    .why-desc  { font-size:13px; color:var(--rust); line-height:1.6; }
+
+    /* ── SERVICE AREAS ── */
+    .areas-layout { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .areas-chips { display:flex; flex-wrap:wrap; gap:8px; perspective:600px; }
+    .area-chip {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:999px; padding:7px 16px;
+      font-size:13px; font-weight:500; color:var(--rust);
+      transition:background .2s, border-color .2s, box-shadow .2s;
+      cursor:default; will-change:transform;
+    }
+    .area-chip:hover { background:var(--amber-lt); border-color:#B8CCFF; box-shadow:0 4px 12px rgba(10,67,255,.1); }
+    .areas-note { font-size:13px; color:var(--rust-lt); margin-top:14px; line-height:1.55; }
+
+    /* ── REVIEWS ── */
+    .reviews-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; perspective:1200px; }
+    .review-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:28px; will-change:transform; cursor:default; transform-origin:center center; }
+    .stars { display:flex; gap:3px; margin-bottom:14px; }
+    .star { width:14px; height:14px; background:var(--amber); clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
+    .review-text { font-family:var(--serif); font-size:16px; font-style:italic; color:var(--espresso); line-height:1.7; margin-bottom:18px; }
+    .reviewer-row { display:flex; align-items:center; gap:10px; }
+    .reviewer-avatar { width:38px; height:38px; border-radius:50%; background:var(--amber-lt); color:var(--amber); font-size:13px; font-weight:500; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .reviewer-name   { font-size:14px; font-weight:500; color:var(--espresso); }
+    .reviewer-detail { font-size:12px; color:var(--rust-lt); margin-top:1px; }
+
+    /* ── BOOKING CTA ── */
+    .cta-wrap { background:var(--walnut); padding:96px 48px; position:relative; overflow:hidden; }
+    .cta-wrap::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 78% 50%,rgba(225,6,0,.12) 0%,transparent 55%); pointer-events:none; }
+    .cta-inner { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1fr 400px; gap:64px; align-items:center; position:relative; }
+    .cta-eyebrow { font-family:var(--mono); font-size:11px; font-weight:500; color:rgba(160,185,255,.85); text-transform:uppercase; letter-spacing:.14em; margin-bottom:14px; }
+    .cta-title { font-family:var(--serif); font-size:clamp(32px,4vw,50px); font-weight:500; color:#FFFFFF; line-height:1.1; margin-bottom:18px; }
+    .cta-sub { font-size:16px; color:rgba(255,255,255,.65); line-height:1.65; margin-bottom:32px; max-width:440px; }
+    .cta-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .cta-note { margin-top:16px; font-size:13px; color:rgba(160,185,255,.5); }
+
+    .booking-card { background:var(--white); border-radius:18px; padding:32px; box-shadow:0 8px 40px rgba(0,0,0,.22); }
+    .booking-title { font-family:var(--serif); font-size:20px; font-weight:500; color:var(--espresso); margin-bottom:4px; }
+    .booking-sub { font-size:13px; color:var(--rust-lt); margin-bottom:22px; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+    .form-group { display:flex; flex-direction:column; gap:5px; }
+    .form-group.span2 { grid-column:span 2; }
+    .form-label { font-size:13px; font-weight:500; color:var(--rust); }
+    .form-input, .form-select, .form-textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:var(--radius-sm); font-family:var(--sans); font-size:14px; color:var(--espresso); background:var(--white); outline:none; transition:border-color .2s; appearance:none; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--amber); }
+    .form-textarea { resize:none; height:82px; }
+    .form-input::placeholder, .form-textarea::placeholder { color:#94A3B8; }
+    .form-submit { width:100%; background:var(--amber); color:#fff; border:none; padding:13px; border-radius:var(--radius-sm); font-family:var(--sans); font-size:15px; font-weight:500; cursor:pointer; transition:background .2s,transform .15s; margin-top:4px; }
+    .form-submit:hover    { background:var(--amber-dk); }
+    .form-submit:active   { transform:scale(.98); }
+    .form-submit:disabled { opacity:.65; cursor:not-allowed; transform:none; }
+    .form-msg { margin-top:12px; padding:12px 16px; border-radius:var(--radius-sm); font-size:14px; display:none; }
+    .form-msg.success { display:block; background:#EAF5EC; color:#276138; border:1px solid #B6DCC0; }
+    .form-msg.error   { display:block; background:#FBF0EE; color:#8B2020; border:1px solid #EDBBBB; }
+
+    /* ── FAQ ── */
+    .faq-list { border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+    .faq-item { border-bottom:1px solid var(--border); }
+    .faq-item:last-child { border-bottom:none; }
+    .faq-q { width:100%; background:var(--white); border:none; padding:20px 24px; text-align:left; font-family:var(--sans); font-size:15px; font-weight:500; color:var(--espresso); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; transition:background .2s; }
+    .faq-q:hover, .faq-q.active { background:var(--cream); }
+    .faq-icon { width:22px; height:22px; border-radius:50%; border:1.5px solid var(--amber); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--amber); font-size:16px; line-height:1; transition:transform .3s,background .2s,color .2s; }
+    .faq-q.active .faq-icon { transform:rotate(45deg); background:var(--amber); color:#fff; }
+    .faq-a { background:var(--cream); max-height:0; overflow:hidden; transition:max-height .35s ease,padding .3s; padding:0 24px; }
+    .faq-a.open { max-height:220px; padding:14px 24px 20px; }
+    .faq-a p { font-size:14px; color:var(--rust); line-height:1.7; }
+
+    /* ── FOOTER ── */
+    footer { background:var(--espresso); padding:56px 48px 32px; }
+    .footer-top { max-width:1160px; margin:0 auto 40px; display:grid; grid-template-columns:260px 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.1); }
+    .footer-logo-img { width:80px; height:80px; border-radius:8px; object-fit:contain; margin-bottom:14px; display:block; }
+    .footer-brand-name { font-family:var(--serif); font-size:15px; color:#FFFFFF; margin-bottom:6px; }
+    .footer-brand-tag  { font-size:13px; color:rgba(255,255,255,.4); line-height:1.55; }
+    .footer-col-title  { font-size:11px; font-weight:500; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.12em; margin-bottom:16px; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .footer-links a { font-size:14px; color:rgba(255,255,255,.55); text-decoration:none; transition:color .2s; }
+    .footer-links a:hover { color:#FFFFFF; }
+    .footer-contact-item { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:rgba(255,255,255,.55); margin-bottom:12px; }
+    .footer-contact-item svg { stroke:var(--amber); flex-shrink:0; margin-top:2px; }
+    .footer-contact-item a { color:rgba(255,255,255,.55); text-decoration:none; transition:color .2s; }
+    .footer-contact-item a:hover { color:#FFFFFF; }
+    .footer-bottom { max-width:1160px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+    .footer-copy { font-size:12px; color:rgba(255,255,255,.28); }
+    .footer-legal { display:flex; gap:20px; }
+    .footer-legal a { font-size:12px; color:rgba(255,255,255,.28); text-decoration:none; transition:color .2s; }
+    .footer-legal a:hover { color:rgba(255,255,255,.6); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width:1024px) {
+      nav { padding:0 28px; }
+      .hero { padding:64px 28px; }
+      .hero-inner { max-width:100%; }
+      .sw { padding:72px 28px; }
+      .trust-bar { padding:28px; }
+      .services-grid { grid-template-columns:repeat(2,1fr); }
+      .why-grid { grid-template-columns:repeat(2,1fr); }
+      .areas-layout { grid-template-columns:1fr; gap:40px; }
+      .cta-wrap { padding:72px 28px; }
+      .cta-inner { grid-template-columns:1fr; gap:40px; }
+      .footer-top { grid-template-columns:1fr 1fr; gap:32px; }
+      footer { padding:48px 28px 28px; }
+    }
+    @media (max-width:768px) {
+      nav { padding:0 20px; height:60px; }
+      .nav-links, .nav-phone { display:none; }
+      .nav-hamburger { display:flex; }
+      .mobile-menu { top:60px; }
+      .hero { padding:48px 20px 56px; }
+      .trust-bar { padding:24px 20px; }
+      .trust-inner { justify-content:center; }
+      .trust-item { flex:0 0 calc(50% - 8px); transform:none !important; }
+      .sw { padding:56px 20px; }
+      .services-grid { grid-template-columns:1fr; gap:12px; }
+      .svc-card { height:auto; perspective:none; }
+      .svc-card-inner { transform:none !important; }
+      .svc-card-front { position:static; }
+      .svc-card-back  { display:none; }
+      .steps { grid-template-columns:1fr; gap:32px; }
+      .steps::before { display:none; }
+      .step { padding:0; }
+      .why-grid { grid-template-columns:1fr; }
+      .reviews-grid { grid-template-columns:1fr; }
+      .booking-card { padding:24px; }
+      .form-grid { grid-template-columns:1fr; }
+      .form-group.span2 { grid-column:span 1; }
+      .footer-top { grid-template-columns:1fr; gap:28px; }
+      footer { padding:40px 20px 24px; }
+      .footer-bottom { flex-direction:column; text-align:center; }
+      .cta-wrap { padding:56px 20px; }
+    }
+
+    /* ── Magnetic Services Grid ── */
+    :root {
+      --bg:              #F0F4FF;
+      --surface:         #FFFFFF;
+      --surface-hover:   #E8EEFF;
+      --mag-border:      rgba(10,67,255,0.12);
+      --mag-border-hover:rgba(10,67,255,0.28);
+      --blue:            #0A43FF;
+      --blue-mid:        #0835CC;
+      --blue-bright:     #5580FF;
+      --text-primary:    #111827;
+      --text-secondary:  #334155;
+      --text-dim:        #64748B;
+      --mag-mono:        'JetBrains Mono', monospace;
+      --mag-sans:        'Inter', system-ui, sans-serif;
+      --mag-radius:      16px;
+      --card-transition: transform 0.18s cubic-bezier(.22,1,.36,1), box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .services-section { padding:100px 0 120px; position:relative; overflow:hidden; background:var(--bg); }
+    .services-section::before { content:''; position:absolute; inset:0; background-image:radial-gradient(rgba(26,108,246,0.07) 1px,transparent 1px); background-size:36px 36px; pointer-events:none; z-index:0; }
+    .services-section::after { content:''; position:absolute; top:-120px; left:50%; transform:translateX(-50%); width:900px; height:400px; background:radial-gradient(ellipse,rgba(26,108,246,0.07) 0%,transparent 70%); pointer-events:none; z-index:0; }
+    .services-section .section-inner { max-width:1160px; margin:0 auto; padding:0 40px; position:relative; z-index:1; }
+
+    .section-header { text-align:center; margin-bottom:64px; }
+    .section-eyebrow { display:inline-flex; align-items:center; gap:8px; font-family:var(--mag-mono); font-size:11px; color:var(--blue-bright); letter-spacing:0.1em; margin-bottom:18px; }
+    .eyebrow-line { width:28px; height:1px; background:var(--blue-bright); opacity:0.5; }
+    .section-title { font-size:clamp(28px,4vw,44px); font-weight:600; letter-spacing:-0.02em; line-height:1.15; color:var(--text-primary); margin-bottom:16px; font-family:var(--mag-sans); }
+    .section-title em { font-style:normal; color:var(--blue-mid); }
+    .section-subtitle { font-size:16px; color:var(--text-secondary); max-width:460px; margin:0 auto; line-height:1.7; font-family:var(--mag-sans); }
+
+    .mag-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+
+    .mag-card { position:relative; background:var(--surface); border:1px solid var(--mag-border); border-radius:var(--mag-radius); padding:36px 28px 32px; cursor:pointer; overflow:hidden; text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:0; transition:var(--card-transition); will-change:transform; transform:perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px); }
+    .mag-card::before { content:''; position:absolute; inset:0; border-radius:var(--mag-radius); background:radial-gradient(280px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(86,176,255,0.10),transparent 70%); opacity:0; transition:opacity 0.35s ease; pointer-events:none; z-index:0; }
+    .mag-card:hover::before { opacity:1; }
+    .mag-card::after { content:''; position:absolute; top:0; left:16px; right:16px; height:1px; background:linear-gradient(90deg,transparent,var(--blue-bright),transparent); opacity:0; transform:scaleX(0.4); transition:opacity 0.3s ease,transform 0.4s cubic-bezier(.22,1,.36,1); pointer-events:none; z-index:1; }
+    .mag-card:hover::after { opacity:0.6; transform:scaleX(1); }
+    .mag-card:hover { background:var(--surface-hover); border-color:var(--mag-border-hover); box-shadow:0 0 0 1px rgba(26,108,246,0.12),0 24px 48px rgba(0,0,0,0.35),0 8px 16px rgba(0,0,0,0.2); }
+
+    .card-content { position:relative; z-index:2; display:flex; flex-direction:column; height:100%; }
+    .card-icon-wrap { width:52px; height:52px; border-radius:12px; background:rgba(26,108,246,0.1); border:1px solid rgba(26,108,246,0.18); display:flex; align-items:center; justify-content:center; margin-bottom:24px; transition:background 0.25s ease,border-color 0.25s ease,transform 0.2s ease; flex-shrink:0; }
+    .mag-card:hover .card-icon-wrap { background:rgba(26,108,246,0.18); border-color:rgba(26,108,246,0.35); transform:translateY(-2px); }
+    .card-icon-wrap svg { width:26px; height:26px; stroke:var(--blue-bright); fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; transition:stroke 0.2s ease; }
+    .mag-card:hover .card-icon-wrap svg { stroke:#7fd0ff; }
+
+    .card-name { font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-primary); margin-bottom:8px; transition:color 0.2s ease; font-family:var(--mag-sans); }
+    .mag-card:hover .card-name { color:#111827; }
+    .card-symptom { font-size:13px; color:var(--text-secondary); line-height:1.55; flex:1; margin-bottom:24px; font-family:var(--mag-sans); }
+    .card-footer { display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--mag-border); padding-top:18px; margin-top:auto; transition:border-color 0.2s ease; }
+    .mag-card:hover .card-footer { border-color:rgba(255,255,255,0.1); }
+    .card-tag { font-family:var(--mag-mono); font-size:10px; color:var(--blue-bright); letter-spacing:0.08em; background:rgba(26,108,246,0.1); padding:4px 9px; border-radius:999px; border:1px solid rgba(26,108,246,0.2); }
+    .card-arrow { width:28px; height:28px; border-radius:50%; border:1px solid var(--mag-border); display:flex; align-items:center; justify-content:center; transition:background 0.2s,border-color 0.2s,transform 0.25s cubic-bezier(.34,1.56,.64,1); flex-shrink:0; }
+    .card-arrow svg { width:14px; height:14px; stroke:var(--text-dim); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:stroke 0.2s,transform 0.2s; }
+    .mag-card:hover .card-arrow { background:var(--blue); border-color:var(--blue); transform:rotate(-45deg); }
+    .mag-card:hover .card-arrow svg { stroke:#fff; }
+
+    .card-badge { position:absolute; top:16px; right:16px; font-family:var(--mag-mono); font-size:9px; letter-spacing:0.1em; color:#60efb4; background:rgba(46,204,113,0.1); border:1px solid rgba(46,204,113,0.25); padding:3px 8px; border-radius:999px; z-index:3; }
+
+    .mag-card--wide { grid-column:1/-1; flex-direction:row; align-items:center; gap:28px; padding:28px 32px; border-style:dashed; }
+    .mag-card--wide .card-content { flex-direction:row; align-items:center; gap:24px; height:auto; }
+    .mag-card--wide .card-icon-wrap { margin-bottom:0; flex-shrink:0; opacity:0.6; }
+    .mag-card--wide .card-text { flex:1; }
+    .mag-card--wide .card-name { margin-bottom:4px; }
+    .mag-card--wide .card-symptom { margin-bottom:0; }
+    .mag-card--wide .card-footer { border-top:none; padding-top:0; margin-top:0; margin-left:auto; flex-shrink:0; gap:12px; }
+
+    @media (max-width:900px) {
+      .mag-card--wide { flex-direction:column; align-items:flex-start; gap:0; padding:36px 28px 32px; }
+      .mag-card--wide .card-content { flex-direction:column; align-items:flex-start; gap:0; height:100%; }
+      .mag-card--wide .card-icon-wrap { margin-bottom:24px; }
+      .mag-card--wide .card-symptom   { margin-bottom:24px; }
+      .mag-card--wide .card-footer { border-top:1px solid var(--mag-border); padding-top:18px; margin-top:auto; margin-left:0; width:100%; }
+      .mag-grid { grid-template-columns:repeat(2,1fr); gap:12px; }
+      .services-section { padding:72px 0 88px; }
+      .services-section .section-inner { padding:0 24px; }
+    }
+    @media (max-width:560px) {
+      .mag-grid { grid-template-columns:1fr; }
+      .section-header { margin-bottom:44px; }
+    }
+
+    @keyframes ripple-out { from { transform:translate(-50%,-50%) scale(0); opacity:0.25; } to { transform:translate(-50%,-50%) scale(3); opacity:0; } }
+    .ripple { position:absolute; width:60px; height:60px; border-radius:50%; background:rgba(86,176,255,0.25); pointer-events:none; animation:ripple-out 0.55s ease-out forwards; z-index:1; }
+
+    .mag-card { opacity:0; transform:perspective(800px) translateY(32px) rotateX(6deg); transition:opacity 0.55s ease,transform 0.55s cubic-bezier(.22,1,.36,1),box-shadow 0.18s ease,border-color 0.18s ease,background 0.18s ease; }
+    .mag-card.revealed { opacity:1; transform:perspective(800px) translateY(0) rotateX(0deg); }
+    .mag-card:focus-visible { outline:2px solid var(--blue); outline-offset:3px; }
+
+    .services-cta { margin-top:56px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; }
+    .cta-primary { display:inline-flex; align-items:center; gap:9px; background:var(--blue); color:#fff; font-family:var(--mag-sans); font-size:15px; font-weight:500; padding:14px 28px; border-radius:9px; border:none; cursor:pointer; text-decoration:none; transition:background 0.2s,transform 0.15s; }
+    .cta-primary:hover { background:var(--blue-mid); transform:translateY(-1px); }
+    .cta-secondary { display:inline-flex; align-items:center; gap:8px; color:var(--text-secondary); font-size:14px; font-family:var(--mag-sans); text-decoration:none; border-bottom:1px solid var(--text-dim); padding-bottom:1px; transition:color 0.2s,border-color 0.2s; }
+    .cta-secondary:hover { color:var(--text-primary); border-color:var(--text-secondary); }
+
+    @media (prefers-reduced-motion:reduce) {
+      .mag-card, .mag-card::before, .mag-card::after, .card-icon-wrap, .card-arrow { transition:none !important; animation:none !important; }
+      .mag-card { opacity:1; transform:none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="/" class="nav-logo" aria-label="Alex Appliance Repair Pro — home">
+    <img src="/brand_assets/logo2.png" alt="" class="nav-logo-img" />
+    <div class="nav-logo-copy">
+      Alex Appliance Repair Pro
+      <span>Licensed &amp; Insured · Houston, TX</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="/washer-repair/">Washer repair</a></li>
+    <li><a href="/refrigerator-repair/">Refrigerator repair</a></li>
+    <li><a href="/dryer-repair/">Dryer repair</a></li>
+    <li><a href="/dishwasher-repair/">Dishwasher repair</a></li>
+    <li><a href="/oven-repair/">Oven repair</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="tel:+18329794383" class="nav-phone">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1.5 2C1.5 2 2.3 1 3.4 1c.4 0 .75.4 1.1 1.1L5.3 3.4c.4.75 0 1.1-.4 1.5-.35.35-.7.7-.35 1.4.35.75 1.5 1.9 2.25 2.25.75.35 1.05 0 1.4-.35s.75-.75 1.5-.35l1.9.75c.75.35 1.1.7 1.1 1.1 0 1.1-1.1 1.9-1.1 1.9C5.25 13.5-1.5 5.25 1.5 2z"/>
+      </svg>
+      (832) 979-4383
+    </a>
+    <a href="#book" class="btn-primary">Book a repair</a>
+  </div>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="/washer-repair/"       class="ml">Washer repair</a></li>
+    <li><a href="/refrigerator-repair/" class="ml">Refrigerator repair</a></li>
+    <li><a href="/dryer-repair/"        class="ml">Dryer repair</a></li>
+    <li><a href="/dishwasher-repair/"   class="ml">Dishwasher repair</a></li>
+    <li><a href="/oven-repair/"         class="ml">Oven repair</a></li>
+    <li><a href="tel:+18329794383" class="ml">(832) 979-4383</a></li>
+  </ul>
+  <a href="#book" class="btn-primary ml">Book a repair today</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero-section" aria-label="Hero">
+  <div class="hero-slides" id="hero-slides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1632923565835-6582b54f2105?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1562941995-17dc31eaaf6d?w=1600&q=80')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-deco" aria-hidden="true">
+    <svg class="deco-wrench-lg" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+    <svg class="deco-gear-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    <svg class="deco-gear-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    <svg class="deco-wrench-sm" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+    <svg class="deco-gear-mid" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+  </div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge fade-in">
+        <div class="hero-badge-dot"></div>
+        Same-day service available in Sugar Land
+      </div>
+
+      <h1 class="fade-up d1">Appliance Repair in Sugar Land, TX</h1>
+
+      <p class="hero-sub fade-up d2">
+        Serving First Colony, Riverstone, Telfair, New Territory, Greatwood, Sugar Creek, and every Sugar Land neighborhood — same-day washer, dryer, refrigerator, dishwasher, and oven repair with a 90-day warranty.
+      </p>
+
+      <div class="hero-actions fade-up d3">
+        <a href="#book" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 1v3M11 1v3M2 7h12"/></svg>
+          Book a repair today
+        </a>
+        <a href="tel:+18329794383" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2.5C2 2.5 2.8 1 3.9 1c.4 0 .75.4 1.1 1.1L5.8 3.4c.4.75 0 1.1-.4 1.5-.35.35-.7.7-.35 1.4C5.4 7.1 6.5 8.2 7.25 8.55c.75.35 1.05 0 1.4-.35s.75-.75 1.5-.35l1.9.75c.75.35 1.1.7 1.1 1.1 0 1.1-1.1 1.9-1.1 1.9C5.25 13.5-1.5 5.25 2 2.5z"/></svg>
+          Call us now
+        </a>
+      </div>
+
+      <div class="hero-trust fade-up d4">
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5.5,11 12,3"/></svg>
+          No fix, no fee
+        </div>
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5.5,11 12,3"/></svg>
+          90-day warranty
+        </div>
+        <div class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5.5,11 12,3"/></svg>
+          Licensed &amp; insured
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar" role="region" aria-label="Key stats">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-num">2,400+</div><div class="trust-label">Repairs completed</div></div>
+    <div class="trust-item"><div class="trust-num">4.9 ★</div><div class="trust-label">Average rating</div></div>
+    <div class="trust-item"><div class="trust-num">Same day</div><div class="trust-label">Service in Sugar Land</div></div>
+    <div class="trust-item"><div class="trust-num">90-day</div><div class="trust-label">Parts &amp; labor warranty</div></div>
+    <div class="trust-item"><div class="trust-num">10+ yrs</div><div class="trust-label">Serving Houston area</div></div>
+  </div>
+</div>
+
+<!-- BRANDS -->
+<section class="brands-section" aria-label="Brands we repair">
+  <div class="brands-heading">
+    <div class="eyebrow">All major brands</div>
+    <h2 class="sec-title" style="margin-bottom:0">Popular Brands We Repair in Sugar Land</h2>
+  </div>
+  <div class="brands-track-wrap">
+    <div class="brands-track">
+      <img src="/brand_assets/brands/whirlpool.png" alt="Whirlpool" class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/samsung.svg"   alt="Samsung"   class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/lg.svg"        alt="LG"        class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/ge.svg"        alt="GE"        class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/maytag.svg"    alt="Maytag"    class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/bosch.svg"     alt="Bosch"     class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/frigidaire.svg" alt="Frigidaire" class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/kenmore.svg"   alt="Kenmore"   class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/subzero.svg"   alt="Sub-Zero"  class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/thermador.jpg" alt="Thermador" class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/miele.svg"     alt="Miele"     class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/whirlpool.png" alt="Whirlpool" class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/samsung.svg"   alt="Samsung"   class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/lg.svg"        alt="LG"        class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/ge.svg"        alt="GE"        class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/maytag.svg"    alt="Maytag"    class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/bosch.svg"     alt="Bosch"     class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/frigidaire.svg" alt="Frigidaire" class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/kenmore.svg"   alt="Kenmore"   class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/subzero.svg"   alt="Sub-Zero"  class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/thermador.jpg" alt="Thermador" class="brand-logo"><span class="brand-dot"></span>
+      <img src="/brand_assets/brands/miele.svg"     alt="Miele"     class="brand-logo"><span class="brand-dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services" aria-labelledby="svc-h">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <div class="eyebrow-line"></div>
+        APPLIANCES WE REPAIR IN SUGAR LAND, TX
+        <div class="eyebrow-line"></div>
+      </div>
+      <h2 id="svc-h" class="section-title">Every major appliance,<br>repaired in <em>Sugar Land, TX.</em></h2>
+      <p class="section-subtitle">
+        First Colony, Riverstone, Telfair and beyond — most repairs completed same day with parts on the truck.
+      </p>
+    </div>
+
+    <div class="mag-grid" id="magGrid">
+
+      <a class="mag-card" href="/washer-repair/" data-index="0" aria-label="Washer repair in Katy TX">
+        <div class="card-badge">Most requested</div>
+        <div class="card-content">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="2"/><circle cx="12" cy="13" r="4"/><circle cx="8" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div class="card-name">Washer repair</div>
+          <div class="card-symptom">Not spinning, won't drain, leaking, loud vibration, or error codes — same-day <a href="/washer-repair/" style="color:var(--blue-bright);text-decoration:underline;">washing machine repair</a> across Katy.</div>
+          <div class="card-footer">
+            <span class="card-tag">SAME DAY</span>
+            <div class="card-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          </div>
+        </div>
+      </a>
+
+      <a class="mag-card" href="/dryer-repair/" data-index="1" aria-label="Dryer repair in Katy TX">
+        <div class="card-content">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M9 7 Q12 5 15 7" stroke-width="1.4"/></svg>
+          </div>
+          <div class="card-name">Dryer repair</div>
+          <div class="card-symptom">No heat, clothes still damp, drum not turning, squealing belt — gas and electric <a href="/dryer-repair/" style="color:var(--blue-bright);text-decoration:underline;">dryer repair</a> in Katy, TX.</div>
+          <div class="card-footer">
+            <span class="card-tag">SAME DAY</span>
+            <div class="card-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          </div>
+        </div>
+      </a>
+
+      <a class="mag-card" href="/refrigerator-repair/" data-index="2" aria-label="Refrigerator repair in Katy TX">
+        <div class="card-content">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="6" x2="9" y2="10"/><line x1="9" y1="14" x2="9" y2="20"/></svg>
+          </div>
+          <div class="card-name">Refrigerator repair</div>
+          <div class="card-symptom">Warm fridge, ice maker broken, leaking water, loud compressor — <a href="/refrigerator-repair/" style="color:var(--blue-bright);text-decoration:underline;">refrigerator repair</a> in Katy same day.</div>
+          <div class="card-footer">
+            <span class="card-tag">SAME DAY</span>
+            <div class="card-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          </div>
+        </div>
+      </a>
+
+      <a class="mag-card" href="/dishwasher-repair/" data-index="3" aria-label="Dishwasher repair in Katy TX">
+        <div class="card-content">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="2" width="18" height="20" rx="2"/><line x1="3" y1="8" x2="21" y2="8"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/><circle cx="12" cy="5" r="1"/></svg>
+          </div>
+          <div class="card-name">Dishwasher repair</div>
+          <div class="card-symptom">Dishes come out dirty, won't drain, leaking from the door — <a href="/dishwasher-repair/" style="color:var(--blue-bright);text-decoration:underline;">dishwasher repair</a> throughout Katy, TX.</div>
+          <div class="card-footer">
+            <span class="card-tag">SAME DAY</span>
+            <div class="card-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          </div>
+        </div>
+      </a>
+
+      <a class="mag-card" href="/oven-repair/" data-index="4" aria-label="Oven and stove repair in Katy TX">
+        <div class="card-content">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="18" rx="2"/><rect x="6" y="10" width="12" height="8" rx="1"/><circle cx="8" cy="7" r="1.2"/><circle cx="12" cy="7" r="1.2"/><circle cx="16" cy="7" r="1.2"/></svg>
+          </div>
+          <div class="card-name">Oven &amp; stove repair</div>
+          <div class="card-symptom">Not heating, burners won't light, door won't close — gas and electric <a href="/oven-repair/" style="color:var(--blue-bright);text-decoration:underline;">oven repair</a> in Katy, TX.</div>
+          <div class="card-footer">
+            <span class="card-tag">SAME DAY</span>
+            <div class="card-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          </div>
+        </div>
+      </a>
+
+      <a class="mag-card" href="#book" data-index="5" aria-label="Book appliance repair in Katy">
+        <div class="card-content">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><rect x="5" y="8" width="11" height="8" rx="1"/><circle cx="19" cy="12" r="1.2"/><line x1="17" y1="9" x2="21" y2="9"/></svg>
+          </div>
+          <div class="card-name">Microwave &amp; more</div>
+          <div class="card-symptom">Microwave not heating, sparking, or display dead — plus freezers, wine coolers, and other appliances on request.</div>
+          <div class="card-footer">
+            <span class="card-tag">CALL US</span>
+            <div class="card-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          </div>
+        </div>
+      </a>
+
+      <a class="mag-card mag-card--wide" href="#book" data-index="6" aria-label="Book appliance repair anywhere in Katy TX">
+        <div class="card-content">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="opacity:.7"><path d="M12 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z" stroke-width="1.6"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke-width="1.4"/></svg>
+          </div>
+          <div class="card-text">
+            <div class="card-name">Serving all of Sugar Land — every neighborhood, every zip code.</div>
+            <div class="card-symptom">First Colony · Riverstone · Telfair · New Territory · Greatwood · Sugar Creek · Imperial · Sienna Plantation border — if you're in Sugar Land, we come to you.</div>
+          </div>
+          <div class="card-footer">
+            <span class="card-tag">BOOK NOW</span>
+            <div class="card-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /mag-grid -->
+
+    <div class="services-cta">
+      <a href="tel:+18329794383" class="cta-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        Call (832) 979-4383
+      </a>
+      <a href="#book" class="cta-secondary">
+        Or book online — takes 60 seconds
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="sw on-cream" aria-labelledby="how-h">
+  <div class="si">
+    <div class="eyebrow">How it works</div>
+    <h2 id="how-h" class="sec-title">Fixed in three easy steps</h2>
+    <p class="sec-sub">No surprises, no runaround — a straightforward process that respects your time.</p>
+
+    <div class="steps" id="steps-container">
+      <div class="steps-progress-wrap" aria-hidden="true">
+        <div class="steps-progress-fill" id="steps-progress-fill"></div>
+      </div>
+      <div class="step" id="step-1">
+        <div class="step-num">1</div>
+        <div class="step-title">Book online or call</div>
+        <div class="step-desc">Choose your appliance, describe the issue, and pick a time. Same-day slots in Sugar Land are available for calls received before 3 pm.</div>
+      </div>
+      <div class="step" id="step-2">
+        <div class="step-num">2</div>
+        <div class="step-title">We come to you</div>
+        <div class="step-desc">A certified technician arrives on time at your Sugar Land home with the tools and most common parts already loaded — no second trip needed.</div>
+      </div>
+      <div class="step" id="step-3">
+        <div class="step-num">3</div>
+        <div class="step-title">Back to normal</div>
+        <div class="step-desc">We fix it, test it, clean up, and hand you a 90-day parts &amp; labor warranty. Your home, working again.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ALEX -->
+<section class="sw on-white" aria-label="Why choose us">
+  <div class="si">
+    <div class="eyebrow">Why Alex</div>
+    <h2 class="sec-title">The repair service that actually shows up</h2>
+    <p class="sec-sub">We built this company around one idea: treat every home like it's our own.</p>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="9"/><path d="M7.5 11l2.5 2.5 5-5"/></svg></div>
+        <div class="why-title">Certified technicians</div>
+        <div class="why-desc">Every tech is factory-trained and background-checked. You'll know who's coming before they knock.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l8-4 8 4v5c0 4-8 7-8 7S3 16 3 12V7z"/></svg></div>
+        <div class="why-title">Upfront, fair pricing</div>
+        <div class="why-desc">We quote before we touch anything. No hidden fees, no upselling. No fix? You pay nothing.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="9"/><path d="M11 6v5l3 3"/></svg></div>
+        <div class="why-title">Same-day in Sugar Land</div>
+        <div class="why-desc">Most repairs completed the same day you call. A broken appliance can't wait — and neither should you.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l2.4 5.3 5.6.5-4.1 3.9 1.2 5.5L11 15.5l-5.1 2.7 1.2-5.5L3 8.8l5.6-.5z"/></svg></div>
+        <div class="why-title">90-day warranty</div>
+        <div class="why-desc">Every repair comes backed. Same issue returns within 90 days? We come back at no charge, no questions asked.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section id="areas" class="sw on-cream" aria-labelledby="areas-h">
+  <div class="si">
+    <div class="areas-layout">
+      <div>
+        <div class="eyebrow">Where we work in Sugar Land</div>
+        <h2 id="areas-h" class="sec-title">Every Sugar Land neighborhood covered</h2>
+        <p style="font-size:16px;color:var(--rust);line-height:1.65;margin-bottom:20px;">We cover all of Sugar Land, TX — from First Colony to Riverstone, Telfair to New Territory and beyond. We also serve the broader Houston metro. If you're not sure whether we reach you, just call.</p>
+        <p style="font-size:13px;color:var(--rust-lt);line-height:1.6;">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#0A43FF" stroke-width="1.7" stroke-linecap="round" style="vertical-align:middle;margin-right:5px;"><circle cx="6.5" cy="6.5" r="5.5"/><path d="M6.5 3.5v3l1.5 1.5"/></svg>
+          Mon – Sat &nbsp;7 am – 7 pm &nbsp;·&nbsp;
+          <a href="tel:+18329794383" style="color:var(--amber);text-decoration:none;">(832) 979-4383</a>
+        </p>
+      </div>
+      <div>
+        <div class="areas-chips" id="areas-chips">
+          <span class="area-chip">First Colony</span>
+          <span class="area-chip">Riverstone</span>
+          <span class="area-chip">Telfair</span>
+          <span class="area-chip">New Territory</span>
+          <span class="area-chip">Greatwood</span>
+          <span class="area-chip">Sugar Creek</span>
+          <span class="area-chip">Imperial</span>
+          <span class="area-chip">Eldridge</span>
+          <span class="area-chip">Missouri City border</span>
+          <span class="area-chip">Sugar Land proper</span>
+          <span class="area-chip">77478</span>
+          <span class="area-chip">77479</span>
+          <span class="area-chip">77498</span>
+        </div>
+        <p class="areas-note">Not seeing your neighborhood? We likely cover it — give us a call to confirm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="sw on-bg" aria-labelledby="rev-h">
+  <div class="si">
+    <div class="eyebrow">Customer reviews — Sugar Land, TX</div>
+    <h2 id="rev-h" class="sec-title">What Sugar Land homeowners say</h2>
+    <p class="sec-sub">Real customers, real homes, real repairs — across Sugar Land and greater Houston.</p>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars" aria-label="5 stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="review-text">"My washer stopped mid-cycle on a Monday morning. Alex's team had someone here by noon and fixed it in under an hour. Absolute lifesavers — and the technician was so polite."</p>
+        <div class="reviewer-row">
+          <div class="reviewer-avatar">MT</div>
+          <div><div class="reviewer-name">Maria T.</div><div class="reviewer-detail">First Colony, Sugar Land TX · Washing machine</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars" aria-label="5 stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="review-text">"Fair pricing, no upselling, and the tech explained exactly what was wrong before touching anything. My fridge is running better than ever. Will 100% call again."</p>
+        <div class="reviewer-row">
+          <div class="reviewer-avatar">JK</div>
+          <div><div class="reviewer-name">James K.</div><div class="reviewer-detail">Riverstone, Sugar Land TX · Refrigerator</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars" aria-label="5 stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="review-text">"Dryer stopped heating right before a busy school week. They came out the same day, diagnosed the heating element in minutes, and had it running before dinner. Highly recommend."</p>
+        <div class="reviewer-row">
+          <div class="reviewer-avatar">SR</div>
+          <div><div class="reviewer-name">Sandra R.</div><div class="reviewer-detail">Telfair, Sugar Land TX · Dryer</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars" aria-label="5 stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="review-text">"Booked online in under 2 minutes. Tech showed up early, fixed the dishwasher, and noticed a loose door latch and fixed that too. Outstanding service."</p>
+        <div class="reviewer-row">
+          <div class="reviewer-avatar">DL</div>
+          <div><div class="reviewer-name">David L.</div><div class="reviewer-detail">New Territory, Sugar Land TX · Dishwasher</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING CTA + FORM -->
+<section id="book" class="cta-wrap" aria-labelledby="cta-h">
+  <div class="cta-inner">
+    <div>
+      <div class="cta-eyebrow">Ready to get started?</div>
+      <h2 id="cta-h" class="cta-title">Appliance broken<br>in Sugar Land?</h2>
+      <p class="cta-sub">Most repairs completed same day in Sugar Land, TX. Free diagnosis — no fix, no fee. Licensed and insured in Texas.</p>
+      <div class="cta-actions">
+        <a href="tel:+18329794383" class="btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2.5C2 2.5 2.8 1 3.9 1c.4 0 .75.4 1.1 1.1L5.8 3.4c.4.75 0 1.1-.4 1.5-.35.35-.7.7-.35 1.4C5.4 7.1 6.5 8.2 7.25 8.55c.75.35 1.05 0 1.4-.35s.75-.75 1.5-.35l1.9.75c.75.35 1.1.7 1.1 1.1 0 1.1-1.1 1.9-1.1 1.9C5.25 13.5-1.5 5.25 2 2.5z"/></svg>
+          (832) 979-4383
+        </a>
+      </div>
+      <p class="cta-note">Mon – Sat 7 am – 7 pm · Emergency calls welcome</p>
+    </div>
+
+    <div class="booking-card">
+      <div class="booking-title">Request a repair in Sugar Land</div>
+      <div class="booking-sub">We'll confirm your appointment within 30 minutes.</div>
+
+      <form id="booking-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="fname">First name</label>
+            <input class="form-input" id="fname" type="text" placeholder="Maria" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lname">Last name</label>
+            <input class="form-input" id="lname" type="text" placeholder="Torres" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone number</label>
+            <input class="form-input" id="phone" type="tel" placeholder="(832) 979-4383" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="appliance">Appliance</label>
+            <select class="form-select" id="appliance" required>
+              <option value="" disabled selected>Select appliance</option>
+              <option>Washing machine</option>
+              <option>Refrigerator</option>
+              <option>Oven / Range</option>
+              <option>Dishwasher</option>
+              <option>Dryer</option>
+              <option>Microwave</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group span2">
+            <label class="form-label" for="issue">Describe the issue</label>
+            <textarea class="form-textarea" id="issue" placeholder="e.g. Won't spin, leaking water from the door…"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">Request a repair →</button>
+        <div class="form-msg" id="form-msg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sw on-cream" aria-labelledby="faq-h">
+  <div class="si" style="max-width:760px;">
+    <div class="eyebrow">Appliance Repair Sugar Land TX — FAQ</div>
+    <h2 id="faq-h" class="sec-title">Common questions</h2>
+    <p class="sec-sub">Can't find your answer? Call us at <a href="tel:+18329794383" style="color:var(--amber);">(832) 979-4383</a>.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you serve all of Sugar Land, TX?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Yes — we cover all of Sugar Land, including First Colony, Riverstone, Telfair, New Territory, Greatwood, Sugar Creek, Imperial, and the zip codes 77478, 77479, and 77498. If you're in Sugar Land and not sure, just call and we'll confirm.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How fast can you come out?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>For calls received before 3 pm we can typically have a technician at your Sugar Land home the same day. Next-day appointments are almost always available. We'll confirm a specific arrival window within 30 minutes of booking — no vague "8 am to 5 pm" windows.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you charge for the diagnostic visit?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>No — our diagnosis is completely free. We assess the appliance, identify the fault, and give you a clear upfront quote before any work begins. If you decide not to proceed with the repair, you owe nothing. No fix, no fee.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What appliances do you repair in Sugar Land?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>We repair <a href="/washer-repair/" style="color:var(--amber)">washing machines</a>, <a href="/dryer-repair/" style="color:var(--amber)">dryers</a>, <a href="/refrigerator-repair/" style="color:var(--amber)">refrigerators</a>, <a href="/dishwasher-repair/" style="color:var(--amber)">dishwashers</a>, and <a href="/oven-repair/" style="color:var(--amber)">ovens &amp; stoves</a> — gas and electric, all major brands in Sugar Land. Microwave repairs and other appliances can be assessed on a case-by-case basis; call us to confirm.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you repair both gas and electric appliances?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Yes — our technicians are certified for both gas and electric appliances. This includes gas dryers, gas ranges, gas ovens, and dual-fuel appliances. All gas work is performed safely and to code.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What brands do you service in Sugar Land, TX?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>We service all major brands — Samsung, LG, Whirlpool, GE, Maytag, Bosch, Frigidaire, KitchenAid, Kenmore, Electrolux, Speed Queen, and more. We stock parts for the most common brands on our trucks, so most Sugar Land repairs are completed in a single visit.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <img src="/brand_assets/logo2.png" alt="Alex Appliance Repair Pro" class="footer-logo-img" />
+      <div class="footer-brand-name">Alex Appliance Repair Pro</div>
+      <div class="footer-brand-tag">Built on trust, driven by expertise.<br>Sugar Land Katy &amp; Houston, TXamp; Houston, TX · Licensed &amp; Insured</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="/washer-repair/">Washer repair</a></li>
+        <li><a href="/refrigerator-repair/">Refrigerator repair</a></li>
+        <li><a href="/oven-repair/">Oven &amp; stove repair</a></li>
+        <li><a href="/dishwasher-repair/">Dishwasher repair</a></li>
+        <li><a href="/dryer-repair/">Dryer repair</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#reviews">Customer reviews</a></li>
+        <li><a href="#areas">Service areas</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#book">Book a repair</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-contact-item">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 2C1.5 2 2.3 1 3.4 1c.4 0 .75.4 1.1 1.1L5.3 3.4c.4.75 0 1.1-.4 1.5-.35.35-.7.7-.35 1.4.35.75 1.5 1.9 2.25 2.25.75.35 1.05 0 1.4-.35s.75-.75 1.5-.35l1.9.75c.75.35 1.1.7 1.1 1.1 0 1.1-1.1 1.9-1.1 1.9C5.25 13.5-1.5 5.25 1.5 2z"/></svg>
+        <a href="tel:+18329794383">(832) 979-4383</a>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="13" height="9" rx="1.5"/><path d="M1 5l6.5 4L14 5"/></svg>
+        <a href="mailto:hello@alexappliancepro.com">hello@alexappliancepro.com</a>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="7.5" r="6"/><path d="M7.5 4v3.5l2 2"/></svg>
+        Mon – Sat &nbsp;7 am – 7 pm
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Alex Appliance Repair Pro LLC · Houston, TX</div>
+    <div class="footer-legal">
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20));
+
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+  document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', () => {
+    ham.classList.remove('open');
+    mob.classList.remove('open');
+  }));
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const open = btn.classList.contains('active');
+      document.querySelectorAll('.faq-q').forEach(q => {
+        q.classList.remove('active');
+        q.setAttribute('aria-expanded', 'false');
+        q.nextElementSibling.classList.remove('open');
+      });
+      if (!open) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
+    });
+  });
+
+  (function() {
+    const heroEl = document.getElementById('hero-section');
+    const slides = Array.from(document.querySelectorAll('.hero-slide'));
+    let current = 0, timer;
+    slides.forEach(s => { const img = new Image(); img.src = s.style.backgroundImage.replace(/^url\(['"]?/,'').replace(/['"]?\)$/,''); });
+    function goTo(idx) { slides[current].classList.remove('active'); current = idx; void slides[current].offsetWidth; slides[current].classList.add('active'); }
+    function start() { timer = setInterval(() => goTo((current + 1) % slides.length), 5000); }
+    function stop()  { clearInterval(timer); }
+    heroEl.addEventListener('mouseenter', stop);
+    heroEl.addEventListener('mouseleave', start);
+    start();
+  })();
+
+  document.getElementById('booking-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const f = e.target, btn = f.querySelector('.form-submit'), msg = document.getElementById('form-msg');
+    btn.textContent = 'Sending…'; btn.disabled = true; msg.className = 'form-msg';
+    try {
+      const res  = await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ fname: f.querySelector('#fname').value.trim(), lname: f.querySelector('#lname').value.trim(), phone: f.querySelector('#phone').value.trim(), appliance: f.querySelector('#appliance').value, issue: f.querySelector('#issue').value.trim() }) });
+      const data = await res.json();
+      if (data.ok) { msg.className = 'form-msg success'; msg.textContent = '✓ Request received! We\'ll call you shortly to confirm.'; f.reset(); btn.textContent = 'Request a repair →'; btn.disabled = false; }
+      else { throw new Error(data.message); }
+    } catch (err) { msg.className = 'form-msg error'; msg.textContent = err.message || 'Something went wrong. Please call us directly.'; btn.textContent = 'Request a repair →'; btn.disabled = false; }
+  });
+</script>
+
+<elevenlabs-convai agent-id="agent_6301kpvr5bh7e6haxxdmrmbp8ydv"></elevenlabs-convai>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  [{id:'#step-1',xFrom:-90,rotY:15},{id:'#step-2',xFrom:90,rotY:-15},{id:'#step-3',xFrom:-90,rotY:15}].forEach(({id,xFrom,rotY},i) => {
+    gsap.from(id, { x:xFrom, rotateY:rotY, transformPerspective:1200, opacity:0, duration:0.85, ease:'power3.out', delay:i*0.18, scrollTrigger:{ trigger:'#steps-container', start:'top 72%', toggleActions:'play none none none' } });
+  });
+
+  gsap.to('#steps-progress-fill', { scaleX:1, ease:'none', scrollTrigger:{ trigger:'#steps-container', start:'top 70%', end:'top 30%', scrub:1.2 } });
+
+  gsap.from('#areas-chips .area-chip', { z:-50, scale:0.5, opacity:0, transformPerspective:600, duration:0.55, ease:'back.out(1.8)', stagger:0.05, scrollTrigger:{ trigger:'#areas', start:'top 72%', toggleActions:'play none none none' } });
+
+  gsap.from('.review-card', { scale:0.85, rotateX:20, transformPerspective:1000, opacity:0, duration:0.8, ease:'power3.out', stagger:{amount:0.45,from:'start'}, scrollTrigger:{ trigger:'#reviews', start:'top 72%', toggleActions:'play none none none' } });
+
+  document.querySelectorAll('.review-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r=card.getBoundingClientRect(), dx=(e.clientX-(r.left+r.width/2))/(r.width/2), dy=(e.clientY-(r.top+r.height/2))/(r.height/2);
+      gsap.to(card, { rotateY:dx*8, rotateX:-dy*5, transformPerspective:800, boxShadow:`${dx*10}px ${-dy*8}px 32px rgba(10,27,75,0.13)`, ease:'power2.out', duration:0.25, overwrite:'auto' });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, { rotateY:0, rotateX:0, boxShadow:'0 1px 4px rgba(10,27,75,0.06)', ease:'power3.out', duration:0.55, overwrite:'auto' });
+    });
+  });
+</script>
+
+<script>
+(function () {
+  'use strict';
+  const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cards = Array.from(document.querySelectorAll('.mag-card'));
+  if (!cards.length) return;
+
+  if (noMotion) {
+    cards.forEach(c => c.classList.add('revealed'));
+  } else {
+    let revealedCount = 0;
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const idx = parseInt(card.dataset.index, 10) || 0;
+          setTimeout(() => card.classList.add('revealed'), idx * 90);
+          revealObserver.unobserve(card);
+          if (++revealedCount === cards.length) revealObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    cards.forEach(c => revealObserver.observe(c));
+  }
+
+  if (!noMotion) {
+    cards.forEach(card => {
+      let rafPending = false;
+      card.addEventListener('mousemove', e => {
+        if (rafPending) return;
+        rafPending = true;
+        requestAnimationFrame(() => {
+          rafPending = false;
+          const rect = card.getBoundingClientRect();
+          const dx = (e.clientX - rect.left - rect.width/2) / (rect.width/2);
+          const dy = (e.clientY - rect.top - rect.height/2) / (rect.height/2);
+          card.style.transform = `perspective(800px) rotateX(${-dy*8}deg) rotateY(${dx*8}deg) translateZ(12px)`;
+          card.style.setProperty('--mouse-x', `${((e.clientX-rect.left)/rect.width)*100}%`);
+          card.style.setProperty('--mouse-y', `${((e.clientY-rect.top)/rect.height)*100}%`);
+        });
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px)'; });
+      card.addEventListener('mouseenter', () => { card.style.transition = 'background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease'; });
+      card.addEventListener('mouseleave', () => { card.style.transition = 'background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.45s cubic-bezier(.22,1,.36,1)'; });
+    });
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', e => {
+      if (noMotion) return;
+      const rect = card.getBoundingClientRect();
+      const ripple = document.createElement('div');
+      ripple.className = 'ripple';
+      ripple.style.left = (e.clientX - rect.left) + 'px';
+      ripple.style.top  = (e.clientY - rect.top)  + 'px';
+      card.appendChild(ripple);
+      ripple.addEventListener('animationend', () => ripple.remove());
+    });
+  });
+
+  cards.forEach(card => {
+    card.addEventListener('focus', () => { card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(8px)'; });
+    card.addEventListener('blur',  () => { card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px)'; });
+  });
+
+  const isTouchDevice = window.matchMedia('(hover: none)').matches;
+  if (isTouchDevice && !noMotion) {
+    cards.forEach(card => {
+      card.addEventListener('touchstart', () => { card.style.transform = 'perspective(800px) translateZ(6px) scale(0.98)'; }, { passive: true });
+      card.addEventListener('touchend',   () => { card.style.transform = 'perspective(800px) translateZ(0)'; }, { passive: true });
+    });
+  }
+})();
+</script>
+</body>
+</html>
