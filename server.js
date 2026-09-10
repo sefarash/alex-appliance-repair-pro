@@ -6,6 +6,9 @@ const path     = require('path');
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
+// Behind Railway's proxy — trust X-Forwarded-For so req.ip is the client IP
+app.set('trust proxy', 1);
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
@@ -17,7 +20,12 @@ if (!process.env.RESEND_API_KEY) {
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.post('/api/contact', async (req, res) => {
-  const { fname, lname, phone, appliance, issue } = req.body;
+  const { fname, lname, phone, appliance, issue, sms_consent } = req.body;
+
+  // A2P 10DLC consent record: what was consented, when (UTC), and from which IP
+  const smsConsent      = sms_consent === true;
+  const consentTimestamp = new Date().toISOString();
+  const clientIp         = req.ip || req.socket.remoteAddress || 'unknown';
 
   if (!fname || !lname || !phone || !appliance) {
     return res.status(400).json({ ok: false, message: 'Please fill in all required fields.' });
@@ -37,6 +45,9 @@ app.post('/api/contact', async (req, res) => {
         `Phone:     ${phone}`,
         `Appliance: ${appliance}`,
         `Issue:     ${issue || 'Not specified'}`,
+        `SMS consent: ${smsConsent ? 'YES' : 'no'}`,
+        `Consent timestamp (UTC): ${consentTimestamp}`,
+        `IP address: ${clientIp}`,
       ].join('\n'),
       html: `
         <table style="font-family:sans-serif;font-size:15px;color:#2C1A0A;border-collapse:collapse;width:100%;max-width:480px">
@@ -49,8 +60,10 @@ app.post('/api/contact', async (req, res) => {
               <td style="padding:12px 20px;border-bottom:1px solid #eee">${phone}</td></tr>
           <tr><td style="padding:12px 20px;border-bottom:1px solid #eee;color:#9A6B3E">Appliance</td>
               <td style="padding:12px 20px;border-bottom:1px solid #eee">${appliance}</td></tr>
-          <tr><td style="padding:12px 20px;color:#9A6B3E;vertical-align:top">Issue</td>
-              <td style="padding:12px 20px">${issue || 'Not specified'}</td></tr>
+          <tr><td style="padding:12px 20px;border-bottom:1px solid #eee;color:#9A6B3E;vertical-align:top">Issue</td>
+              <td style="padding:12px 20px;border-bottom:1px solid #eee">${issue || 'Not specified'}</td></tr>
+          <tr><td style="padding:12px 20px;border-bottom:1px solid #eee;color:#9A6B3E">SMS consent</td>
+              <td style="padding:12px 20px;border-bottom:1px solid #eee">${smsConsent ? 'YES' : 'no'} · ${consentTimestamp} · IP ${clientIp}</td></tr>
         </table>
       `,
     });

@@ -446,6 +446,13 @@
     .form-group { display:flex; flex-direction:column; gap:5px; }
     .form-group.span2 { grid-column:span 2; }
     .form-label { font-size:13px; font-weight:500; color:var(--rust); }
+    .form-hint { font-size:12px; color:var(--rust-lt); line-height:1.4; }
+    .form-consent { display:flex; align-items:flex-start; gap:10px; margin-top:16px; }
+    .form-consent input[type="checkbox"] { width:15px; height:15px; margin-top:3px; flex-shrink:0; accent-color:var(--amber); cursor:pointer; }
+    .form-consent label { font-size:12.5px; color:var(--rust-lt); line-height:1.55; cursor:pointer; }
+    .form-consent label strong { color:var(--rust); font-weight:500; }
+    .form-consent-links { margin-top:4px; }
+    .form-consent-links a { font-size:12.5px; color:var(--amber); }
     .form-input, .form-select, .form-textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:var(--radius-sm); font-family:var(--sans); font-size:14px; color:var(--espresso); background:var(--white); outline:none; transition:border-color .2s; appearance:none; }
     .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--amber); }
     .form-textarea { resize:none; height:82px; }
@@ -1097,6 +1104,7 @@
           <div class="form-group">
             <label class="form-label" for="phone">Phone number</label>
             <input class="form-input" id="phone" type="tel" placeholder="(832) 979-4383" required />
+            <div class="form-hint">We'll use this to call and confirm your appointment.</div>
           </div>
           <div class="form-group">
             <label class="form-label" for="appliance">Appliance</label>
@@ -1114,6 +1122,13 @@
           <div class="form-group span2">
             <label class="form-label" for="issue">Describe the issue</label>
             <textarea class="form-textarea" id="issue" placeholder="e.g. Won't spin, leaking water from the door…"></textarea>
+          </div>
+        </div>
+        <div class="form-consent">
+          <input type="checkbox" id="sms_consent" name="sms_consent" />
+          <div>
+            <label for="sms_consent"><strong>Optional:</strong> Text me appointment reminders and updates. By checking this box, you agree to receive SMS from Alex Appliance Pro about your appointment (reminders, scheduling updates, post-visit instructions). Consent is not a condition of purchase. Msg frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to cancel, <strong>HELP</strong> for help.</label>
+            <div class="form-consent-links"><a href="https://www.alexappliancepro.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://www.alexappliancepro.com/terms-of-service/" target="_blank" rel="noopener">Terms</a></div>
           </div>
         </div>
         <button type="submit" class="form-submit">Request a repair →</button>
@@ -1266,7 +1281,7 @@
     const f = e.target, btn = f.querySelector('.form-submit'), msg = document.getElementById('form-msg');
     btn.textContent = 'Sending…'; btn.disabled = true; msg.className = 'form-msg';
     try {
-      const res  = await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ fname: f.querySelector('#fname').value.trim(), lname: f.querySelector('#lname').value.trim(), phone: f.querySelector('#phone').value.trim(), appliance: f.querySelector('#appliance').value, issue: f.querySelector('#issue').value.trim() }) });
+      const res  = await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ fname: f.querySelector('#fname').value.trim(), lname: f.querySelector('#lname').value.trim(), phone: f.querySelector('#phone').value.trim(), appliance: f.querySelector('#appliance').value, issue: f.querySelector('#issue').value.trim(), sms_consent: f.querySelector('#sms_consent').checked }) });
       const data = await res.json();
       if (data.ok) { msg.className = 'form-msg success'; msg.textContent = '✓ Request received! We\'ll call you shortly to confirm.'; f.reset(); btn.textContent = 'Request a repair →'; btn.disabled = false; }
       else { throw new Error(data.message); }
