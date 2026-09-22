@@ -9,6 +9,14 @@ const PORT = process.env.PORT || 3000;
 // Behind Railway's proxy — trust X-Forwarded-For so req.ip is the client IP
 app.set('trust proxy', 1);
 
+// Canonical host: 301 www → apex so Google indexes one site
+app.use((req, res, next) => {
+  if (req.hostname === 'www.alexappliancepro.com') {
+    return res.redirect(301, 'https://alexappliancepro.com' + req.originalUrl);
+  }
+  next();
+});
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
