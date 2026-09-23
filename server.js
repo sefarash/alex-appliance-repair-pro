@@ -78,14 +78,14 @@ app.post('/api/contact', async (req, res) => {
 
     if (error) {
       console.error('✗ Resend error:', error.message);
-      return res.status(500).json({ ok: false, message: 'Failed to send email. Please call us directly at (832) 979-4383.' });
+      return res.status(500).json({ ok: false, message: 'Failed to send email. Please call us directly at (346) 353-1644.' });
     }
 
     console.log(`✓ Repair request sent: ${appliance} — ${fname} ${lname}`);
     res.json({ ok: true, message: 'Request sent successfully.' });
   } catch (err) {
     console.error('✗ Mail error:', err.message);
-    res.status(500).json({ ok: false, message: 'Failed to send email. Please call us directly at (832) 979-4383.' });
+    res.status(500).json({ ok: false, message: 'Failed to send email. Please call us directly at (346) 353-1644.' });
   }
 });
 
