@@ -6,6 +6,8 @@ const path     = require('path');
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
+app.disable('x-powered-by');
+
 // Behind Railway's proxy — trust X-Forwarded-For so req.ip is the client IP
 app.set('trust proxy', 1);
 
