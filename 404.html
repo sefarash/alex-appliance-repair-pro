@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Alex Appliance Pro</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --amber:    #0A43FF;
+      --amber-dk: #0835CC;
+      --cream:    #F0F4FF;
+      --walnut:   #0A1B4B;
+      --espresso: #111827;
+      --rust:     #334155;
+      --rust-lt:  #64748B;
+      --white:    #FFFFFF;
+      --border:   rgba(10,67,255,0.15);
+      --serif:    'Playfair Display', Georgia, serif;
+      --sans:     'DM Sans', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--rust);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .logo { width: 140px; height: auto; margin-bottom: 8px; }
+    .code {
+      font-family: var(--serif);
+      font-size: clamp(72px, 16vw, 120px);
+      font-weight: 500;
+      color: var(--amber);
+      line-height: 1;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 5vw, 36px);
+      font-weight: 500;
+      color: var(--espresso);
+      margin: 12px 0 10px;
+    }
+    p { max-width: 440px; font-size: 17px; line-height: 1.6; margin-bottom: 28px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 36px; }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary { background: var(--amber); color: var(--white); }
+    .btn-primary:hover { background: var(--amber-dk); }
+    .btn-outline { border: 1px solid var(--border); background: var(--white); color: var(--espresso); }
+    .btn-outline:hover { border-color: var(--amber); }
+    .links { font-size: 14px; color: var(--rust-lt); }
+    .links a { color: var(--rust); text-decoration: none; margin: 0 10px; }
+    .links a:hover { color: var(--amber); }
+  </style>
+</head>
+<body>
+  <img src="/brand_assets/logo-new.png" alt="Alex Appliance Pro" class="logo" width="140" height="140" />
+  <div class="code">404</div>
+  <h1>This page is on the fritz.</h1>
+  <p>The page you're looking for doesn't exist or has moved. But your appliance repair is still just one call away.</p>
+  <div class="actions">
+    <a href="/" class="btn btn-primary">Back to homepage</a>
+    <a href="tel:+13463531644" class="btn btn-outline">Call (346) 353-1644</a>
+  </div>
+  <div class="links">
+    <a href="/washer-repair/">Washer</a>·
+    <a href="/refrigerator-repair/">Refrigerator</a>·
+    <a href="/dryer-repair/">Dryer</a>·
+    <a href="/dishwasher-repair/">Dishwasher</a>·
+    <a href="/oven-repair/">Oven</a>
+  </div>
+</body>
+</html>
