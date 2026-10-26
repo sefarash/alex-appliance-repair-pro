@@ -226,12 +226,36 @@
       .footer-bottom { flex-direction:column; text-align:center; }
     }
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://alexappliancepro.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Book a Repair",
+          "item": "https://alexappliancepro.com/book/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <nav id="main-nav">
   <a href="/" class="nav-logo" aria-label="Alex Appliance Pro — home">
-    <img src="/brand_assets/logo-new.png" alt="Alex Appliance Pro" class="nav-logo-img" />
+    <img src="/brand_assets/logo-new.png" alt="Alex Appliance Pro" class="nav-logo-img" width="1000" height="1000" />
   </a>
 
   <ul class="nav-links">
@@ -322,7 +346,7 @@
           <input type="checkbox" id="sms_consent" name="sms_consent" />
           <div>
             <label for="sms_consent"><strong>Optional:</strong> Text me appointment reminders and updates. By checking this box, you agree to receive SMS from Alex Appliance Pro about your appointment (reminders, scheduling updates, post-visit instructions). Consent is not a condition of purchase. Msg frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to cancel, <strong>HELP</strong> for help.</label>
-            <div class="form-consent-links"><a href="https://www.alexappliancepro.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://www.alexappliancepro.com/terms-of-service/" target="_blank" rel="noopener">Terms</a></div>
+            <div class="form-consent-links"><a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> · <a href="/terms-of-service/" target="_blank" rel="noopener">Terms</a></div>
           </div>
         </div>
         <button type="submit" class="form-submit">Request a repair →</button>
@@ -335,7 +359,7 @@
 <footer>
   <div class="footer-top">
     <div>
-      <img src="/brand_assets/logo-new.png" alt="Alex Appliance Pro" class="footer-logo-img" />
+      <img src="/brand_assets/logo-new.png" alt="Alex Appliance Pro" class="footer-logo-img" width="1000" height="1000" loading="lazy" decoding="async" />
       <div class="footer-brand-tag">Houston, TX · Licensed &amp; Insured</div>
     </div>
     <div>
@@ -377,6 +401,7 @@
   <div class="footer-bottom">
     <div class="footer-copy">© 2025 Alex Appliance Pro LLC · Houston, TX</div>
     <div class="footer-legal">
+      <a href="/book/">Book online</a>
       <a href="/privacy-policy/">Privacy policy</a>
       <a href="/terms-of-service/">Terms of service</a>
     </div>

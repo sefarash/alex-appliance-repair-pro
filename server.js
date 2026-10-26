@@ -19,7 +19,16 @@ app.use((req, res, next) => {
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname), {
+  setHeaders(res, filePath) {
+    if (filePath.endsWith('.html')) {
+      // HTML must revalidate so deploys show up immediately
+      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    } else {
+      res.setHeader('Cache-Control', 'public, max-age=604800'); // 7 days for images/assets
+    }
+  },
+}));
 
 if (!process.env.RESEND_API_KEY) {
   console.warn('⚠️  RESEND_API_KEY not set — emails will fail until you add it in Railway Variables');
